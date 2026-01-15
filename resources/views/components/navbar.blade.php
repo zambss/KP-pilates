@@ -1,6 +1,7 @@
-<div Class=app>
+<div class="app">
     <nav class="navbar">
         <div class="navbar-container">
+
             <div class="logo">
                 <a href="/">Rens.Pilates</a>
             </div>
@@ -15,8 +16,12 @@
             </ul>
 
             <div class="nav-action">
-                <a href="/join-class" class="btn-nav">Join Class</a>
+                <!-- BUTTON POPUP -->
+                <a href="#" class="btn-nav" id="openLogin">
+                    Login / Join Class
+                </a>
             </div>
+
         </div>
     </nav>
 </div>

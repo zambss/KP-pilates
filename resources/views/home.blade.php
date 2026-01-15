@@ -1,9 +1,12 @@
 @extends('layouts.main')
 @section('content')
+@include('components.login-modal')
+<link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+<script src="{{ asset('js/modal.js') }}"></script>
+
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endpush
-
 
 <section class="hero">
     <div class="hero-glass">
@@ -13,8 +16,9 @@
             <h1>Transform Your<br>Body & Mind</h1>
 
             <p>
-                Bergabunglah dengan Rens Pilates dan rasakan perubahan nyata
-                dalam kesehatan dan kebugaran Anda.
+                Bergabunglah dengan Rens.Pilates dan rasakan perubahan nyata
+                dalam kesehatan dan kebugaran Anda. Kelas premium dengan
+                instruktur bersertifikat, fasilitas modern, dan komunitas yang mendukung.
             </p>
 
             <div class="hero-buttons">
@@ -22,24 +26,32 @@
                 <a href="#" class="btn-outline">Become a Member</a>
             </div>
 
+            <div class="hero-divider"></div>
+
             <div class="hero-stats">
-                <div>
+                <div class="stat-box">
                     <strong>500+</strong>
                     <span>Active Members</span>
                 </div>
-                <div>
+                <div class="stat-box">
                     <strong>50+</strong>
                     <span>Weekly Classes</span>
                 </div>
             </div>
         </div>
+
         <div class="hero-right">
-            <div class="hero-right">
-                <div class="class-card">
-                    <img src="image/Screenshot 2026-01-08 204300 1.png" alt="Reformer Pilates">
-                    <div class="card-info">
+            <div class="class-card">
+                <img src="image/Screenshot 2026-01-08 204300 1.png" alt="Reformer Pilates" class="card-img">
+
+                <div class="card-info">
+                    <div class="info-text">
+                        <span class="category">Weekly Classes</span>
                         <h4>Reformer Pilates</h4>
                         <p>Today, 10:00 AM</p>
+                    </div>
+                    <div class="arrow-circle">
+                        <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
             </div>
@@ -61,34 +73,157 @@
     </div>
 </section>
 
+<div class="section-divider"></div>
+
 
 {{-- paket dan harga--}}
-<section class=" paket-preview">
-    <div class="container">
-        <h2>Paket & Harga</h2>
+<section class="pricing-section">
+    <div class="pricing-header">
+        <span class="pricing-subtitle">Paket & Harga</span>
         <h2>Pilih Paket yang Sesuai untuk Anda</h2>
         <p>
             Berbagai pilihan paket kelas dengan harga terjangkau.
             Semakin banyak sesi yang Anda ambil, semakin hemat!
         </p>
-        <div class="hero-buttons">
-            <a href="#" class="btn-primary">Join Class Now</a>
-            <a href="#" class="btn-outline">Become a Member</a>
+    </div>
+
+    <div class="pricing-grid">
+        <!-- CARD 1 -->
+        <div class="pricing-card" data-paket="Mat Pilates & Yoga">
+            <h4>Group Class</h4>
+            <h3>Mat Pilates & Yoga</h3>
+            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
+
+            <ul class="price-list">
+                <li><span>1 Sesi</span><strong>Rp60.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp300.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp480.000</strong></li>
+            </ul>
+
+            <hr>
+
+            <ul class="benefit-list">
+                <li>Instruktur bersertifikat</li>
+                <li>Maks 12 peserta per kelas</li>
+                <li>Matras tersedia</li>
+                <li>Durasi 60 menit</li>
+            </ul>
+
+            <button class="btn-select">Pilih Paket</button>
         </div>
-        <div class="hero-buttons">
-            <a href="#" class="btn-primary">Join Class Now</a>
-            <a href="#" class="btn-outline">Become a Member</a>
+
+        <!-- CARD 2 -->
+        <div class="pricing-card" data-paket="Chair & Swing Yoga">
+            <h4>Group Class</h4>
+            <h3>Chair & Swing Yoga</h3>
+            <p class="desc">Kelas dengan peralatan khusus</p>
+
+            <ul class="price-list">
+                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
+            </ul>
+
+            <hr>
+
+            <ul class="benefit-list">
+                <li>Instruktur bersertifikat</li>
+                <li>Alat premium per kelas</li>
+                <li>Peralatan lengkap</li>
+                <li>Durasi 60 menit</li>
+            </ul>
+
+            <button class="btn-select">Pilih Paket</button>
         </div>
-        <div class="hero-buttons">
-            <a href="#" class="btn-primary">Join Class Now</a>
-            <a href="#" class="btn-outline">Become a Member</a>
+
+        <!-- CARD 3 -->
+        <div class="pricing-card highlight" data-paket="Reformer Pilates">
+            <h4>Group Class</h4>
+            <h3>Reformer Pilates</h3>
+            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
+
+            <ul class="price-list">
+                <li><span>1 Sesi</span><strong>Rp99.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp495.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp792.000</strong></li>
+            </ul>
+
+            <hr>
+
+            <ul class="benefit-list">
+                <li>Instruktur expert</li>
+                <li>Reformer machine premium</li>
+                <li>Studio eksklusif</li>
+                <li>Durasi 60 menit</li>
+            </ul>
+
+            <button class="btn-select">Pilih Paket</button>
         </div>
-        <div class="hero-buttons">
-            <a href="#" class="btn-primary">Join Class Now</a>
-            <a href="#" class="btn-outline">Become a Member</a>
+
+        <!-- CARD 4 -->
+        <div class="pricing-card highlight" data-paket="Reformer Pilates">
+            <h4>Group Class</h4>
+            <h3>Reformer Pilates</h3>
+            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
+
+            <ul class="price-list">
+                <li><span>1 Sesi</span><strong>Rp99.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp495.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp792.000</strong></li>
+            </ul>
+
+            <hr>
+
+            <ul class="benefit-list">
+                <li>Instruktur expert</li>
+                <li>Reformer machine premium</li>
+                <li>Studio eksklusif</li>
+                <li>Durasi 60 menit</li>
+            </ul>
+
+            <button class="btn-select">Pilih Paket</button>
+        </div>
+
+
+        <!-- CARD 5 -->
+        <div class="pricing-card highlight" data-paket="Reformer Pilates">
+            <h4>Group Class</h4>
+            <h3>Reformer Pilates</h3>
+            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
+
+            <ul class="price-list">
+                <li><span>1 Sesi</span><strong>Rp99.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp495.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp792.000</strong></li>
+            </ul>
+
+            <hr>
+
+            <ul class="benefit-list">
+                <li>Instruktur expert</li>
+                <li>Reformer machine premium</li>
+                <li>Studio eksklusif</li>
+                <li>Durasi 60 menit</li>
+            </ul>
+
+            <button class="btn-select">Pilih Paket</button>
+        </div>
+
+        <div class="promo-box">
+            <div class="promo-text">
+                <span class="promo-title">Promo Spesial!</span>
+                <span class="promo-desc">
+                    Beli 5 sesi gratis 1 sesi • Beli 8 sesi gratis 2 sesi
+                </span>
+            </div>
+
+            <a href="/about" class="btn-promo">Dapatkan promo</a>
         </div>
     </div>
 </section>
+
+
+<div class="section-divider"></div>
 
 
 {{-- ABOUT PREVIEW --}}
@@ -119,6 +254,8 @@
             <a href="/about" class="btn-secondary">Read More</a>
         </div>
 </section>
+
+<div class="section-divider"></div>
 
 {{-- FASILITAS --}}
 <section class="fasilitas-preview">
@@ -152,6 +289,8 @@
         </div>
 </section>
 
+<div class="section-divider"></div>
+
 {{-- COACH --}}
 <section class="coach-preview">
     <div class="container">
@@ -173,7 +312,7 @@
     </div>
 </section>
 
-
+<div class="section-divider"></div>
 
 {{-- FAQ --}}
 {{-- FAQ --}}
@@ -215,6 +354,7 @@
         </div>
     </div>
 </section>
+<div class="section-divider"></div>
 
 {{-- CTA JOIN --}}
 <section class="cta">

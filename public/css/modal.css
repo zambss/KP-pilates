@@ -1,0 +1,175 @@
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(46, 46, 45, 0.207);
+    backdrop-filter: blur(6px);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-box {
+    position: relative;
+    z-index: 10001; /* 🔥 NAIKKAN DI ATAS OVERLAY */
+
+    width: 380px;
+    background: #FAF1D6;
+    border-radius: 24px;
+    padding: 32px;
+
+    box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+
+.modal-box input::placeholder {
+    color: #aaa;
+    transition: opacity 0.3s ease;
+}
+
+.modal-box input:focus::placeholder {
+    opacity: 0;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+.role-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #4A5D52;
+}
+
+.role-item {
+    cursor: pointer;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 4px 2px; /* biar area klik lebih manusiawi */
+}
+
+/* hover underline halus */
+.role-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #937B57;
+    transition: width 0.3s ease;
+}
+
+.role-item:hover {
+    color: #2F3E36;
+}
+
+.role-item:hover::after {
+    width: 100%;
+}
+
+/* aktif / terpilih */
+.role-item.active {
+    color: #2F3E36;
+}
+
+.role-item.active::after {
+    width: 100%;
+}
+
+.role-divider {
+    color: #AFA58F;
+}
+
+.btn-google {
+    margin-top: 24px;
+    width: 100%;
+    padding: 12px;
+
+    background: transparent;
+    border: 1px solid #2F3E36;
+    color: #2F3E36;
+
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+.btn-google:hover {
+    background: rgba(47, 62, 54, 0.08);
+}
+
+
+.divider {
+    margin: 16px 0;
+    color: #888;
+}
+
+.modal-box input {
+    width: 100%;
+    box-sizing: border-box; /* INI KUNCI */
+
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.password-field input {
+    position: relative;
+     padding-right: 42px;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    cursor: pointer;
+}
+.forgot-password {
+    text-align: right;
+    margin-top: -6px;
+    margin-bottom: 12px;
+}
+
+.forgot-password a {
+    font-size: 13px;
+    color: #937B57;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: #937B57;
+    color: #FAF1D6;
+    border-radius: 30px;
+    border: none;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    pointer-events: auto;
+}

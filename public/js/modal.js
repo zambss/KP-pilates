@@ -1,0 +1,86 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =======================
+       MODAL LOGIN
+    ======================= */
+    const openBtn  = document.getElementById("openLogin");
+    const modal    = document.getElementById("loginModal");
+    const closeBtn = document.getElementById("closeLogin");
+
+    if (openBtn && modal) {
+        openBtn.addEventListener("click", () => {
+            modal.classList.add("active");
+        });
+    }
+
+    if (closeBtn && modal) {
+        closeBtn.addEventListener("click", () => {
+            modal.classList.remove("active");
+        });
+    }
+
+
+    /* =======================
+       TOGGLE PASSWORD
+    ======================= */
+    const toggle = document.getElementById("togglePassword");
+    const pass   = document.getElementById("password");
+
+    if (toggle && pass) {
+        toggle.addEventListener("click", () => {
+            pass.type = pass.type === "password" ? "text" : "password";
+        });
+    }
+
+
+    /* =======================
+       ROLE SWITCH
+    ======================= */
+    const roleItems = document.querySelectorAll(".role-item");
+
+    roleItems.forEach(item => {
+        item.addEventListener("click", () => {
+            roleItems.forEach(i => i.classList.remove("active"));
+            item.classList.add("active");
+
+            const role = item.dataset.role;
+            localStorage.setItem("selectedRole", role);
+        });
+    });
+
+
+    /* =======================
+       LOGIN BUTTON (SIMULASI)
+    ======================= */
+    const loginBtn = document.querySelector(".btn-login");
+
+    if (loginBtn) {
+        loginBtn.addEventListener("click", () => {
+            const selectedRole = localStorage.getItem("selectedRole") || "user";
+
+            localStorage.setItem("isLogin", "true");
+            localStorage.setItem("username", "Azzam");
+            localStorage.setItem("role", selectedRole);
+
+            // redirect simulasi
+            window.location.href = "/dashboard";
+        });
+    }
+
+
+    /* =======================
+       NAVBAR AUTH STATE
+    ======================= */
+    const isLogin  = localStorage.getItem("isLogin");
+    const username = localStorage.getItem("username");
+    const navAuth  = document.getElementById("navAuth");
+
+    if (isLogin && username && navAuth) {
+        navAuth.innerHTML = `
+            <div class="user-name">
+                Hi, ${username}
+            </div>
+        `;
+    }
+
+});
