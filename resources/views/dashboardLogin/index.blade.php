@@ -9,7 +9,7 @@
 <h1 class="welcome">Selamat Datang, Katrina!</h1>
 <p class="member-since">Member sejak 15 Jan 2026</p>
 
-<div class=" stats-grid">
+<div id="openLoginModal" class=" stats-grid">
     <div class="stat-card">
         <span>Total Sesi Aktif</span>
         <strong>6</strong>

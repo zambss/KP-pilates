@@ -35,8 +35,9 @@
             <div class="forgot-password">
                 <a href="#">Lupa password?</a>
             </div>
-
-            <button href="#" class=" btn-login">Login</button>
+            <button type="button" class="btn-login" id="openLoginModal">
+                Login
+            </button>
         </form>
 
     </div>
