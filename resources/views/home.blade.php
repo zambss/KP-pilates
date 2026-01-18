@@ -22,8 +22,7 @@
             </p>
 
             <div class="hero-buttons">
-                <a href="#" class="btn-primary">Join Class Now</a>
-                <a href="#" class="btn-outline">Become a Member</a>
+                <a href="#" class="btn-primary" id="openLogin">Join Class Now</a>
             </div>
 
             <div class="hero-divider"></div>
@@ -61,19 +60,36 @@
 
 
 {{-- EVENT & PROMO --}}
-<section class="event-preview">
+<section id="event" class="event-preview">
     <div class="container">
         <h2>Event & Promo</h2>
         <h2>jangan lewatkan event dan promo menarik</h2>
         <p>Ikuti event spesial dan manfaatkan promo eksklusif kami</p>
-        <a href="/event">Lihat Event</a>
-        <div class="event-card">
-            <img src="image/image 1.png" alt="Reformer Pilates">
+        <p>pilih paket membership</p>
+    </div>
+
+    <div class="event-grid">
+        <!-- CARD 1 -->
+        <div class="event-card" data-paket="Mat Pilates & Yoga">
+            <h3>Starter</h3>
+            <h3>BASIC</h3>
+            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
+            <hr>
+            <ul class="benefit-list">
+                <li>Instruktur bersertifikat</li>
+                <li>Maks 12 peserta per kelas</li>
+                <li>Matras tersedia</li>
+                <li>Durasi 60 menit</li>
+            </ul>
+
+            <button class="btn-select">Pilih Paket</button>
         </div>
     </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
 
 
 {{-- paket dan harga--}}
@@ -209,114 +225,166 @@
             <button class="btn-select">Pilih Paket</button>
         </div>
 
-        <div class="promo-box">
-            <div class="promo-text">
-                <span class="promo-title">Promo Spesial!</span>
-                <span class="promo-desc">
-                    Beli 5 sesi gratis 1 sesi • Beli 8 sesi gratis 2 sesi
-                </span>
-            </div>
+        <div class="promo-wrapper">
+            <div class="promo-box">
+                <div class="promo-text">
+                    <span class="promo-title">Promo Spesial!</span>
+                    <span class="promo-desc">
+                        Beli 5 sesi gratis 1 sesi • Beli 8 sesi gratis 2 sesi
+                    </span>
+                </div>
 
-            <a href="/about" class="btn-promo">Dapatkan promo</a>
+                <a href="/about" class="btn-promo">Dapatkan promo</a>
+            </div>
         </div>
     </div>
 </section>
 
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
 
-<div class="section-divider"></div>
+{{-- ===================
+ABOUT SECTION
+===================== --}}
 
+<section id="about" class="about-preview">
+    <div class="container about-layout">
 
-{{-- ABOUT PREVIEW --}}
-<section class=" about-preview">
-    <div class="container">
-        <h2>About Me</h2>
-        <p>Women nly Pilates studio</p>
-        <h2> Transform your <br> Body & Mind </h2>
-        <p>
-            Rens.Pilates adalah studio pilates premium yang didirikan dengan misi membawa transformasi kesehatan dan
-            kebugaran yang holistik. Kami percaya bahwa setiap individu memiliki potensi untuk mencapai versi terbaik
-            dari diri mereka.
-        </p>
-        <br>
-        <p>
-            Dengan instruktur bersertifikat internasional, peralatan modern, dan program yang disesuaikan dengan
-            kebutuhan Anda, kami hadir untuk mendampingi perjalanan transformasi Anda.
-        </p>
-        <div class="hero-stats">
-            <div>
-                <strong>500+</strong>
-                <span>Active Members</span>
+        <!-- TEXT -->
+        <div class="about-content">
+            <h2 class="about-label">About Rens Pilates</h2>
+            <p class="about-subtitle">Women only Pilates studio</p>
+
+            <h2 class="about-title">
+                Transform your <br> Body & Mind
+            </h2>
+
+            <p class="about-desc">
+                Rens.Pilates adalah studio pilates premium yang didirikan dengan misi membawa transformasi kesehatan dan
+                kebugaran yang holistik.
+            </p>
+
+            <p class="about-desc">
+                Dengan instruktur bersertifikat internasional, peralatan modern, dan program yang disesuaikan dengan
+                kebutuhan Anda, kami hadir untuk mendampingi perjalanan transformasi Anda.
+            </p>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>500+</strong>
+                    <span>Active Members</span>
+                </div>
+                <div>
+                    <strong>50+</strong>
+                    <span>Weekly Classes</span>
+                </div>
             </div>
-            <div>
-                <strong>50+</strong>
-                <span>Weekly Classes</span>
-            </div>
-            <a href="/about" class="btn-secondary">Read More</a>
         </div>
+
+        <!-- IMAGE -->
+        <div class="about-card">
+            <img src="image/Screenshot 2026-01-08 192955 4.png" alt="Reformer Pilates">
+        </div>
+
+    </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
 
 {{-- FASILITAS --}}
-<section class="fasilitas-preview">
+<section id="fasilitas" class="fasilitas-preview">
     <div class="container">
-        <h1>Fasilitas</h1>
+        <span class="section-label">Fasilitas</span>
         <h2>Fasilitas Premium untuk Pengalaman Terbaik</h2>
+
         <div class="fasilitas-grid">
+
             <div class="fasilitas-card">
                 <img src="image/ChatGPT Image Jan 9, 2026, 10_35_35 PM 2.png" alt="Reformer Pilates">
+                <div class="fasilitas-text">
+                    <h3>Reformer Pilates</h3>
+                    <p>Peralatan reformer pilates terbaru dari brand ternama dengan kualitas terbaik</p>
+                </div>
             </div>
 
             <div class="fasilitas-card">
                 <img src="image/ChatGPT Image Jan 9, 2026, 10_40_56 PM 1.png" alt="Private studio">
+                <div class="fasilitas-text">
+                    <h3>Private Studios</h3>
+                    <p>Ruangan private untuk sesi one-on-one dengan privasi</p>
+                </div>
             </div>
 
             <div class="fasilitas-card">
                 <img src="image/ChatGPT Image Jan 11, 2026, 08_47_04 PM 1.png" alt="Group studio">
+                <div class="fasilitas-text">
+                    <h3>Group Studios</h3>
+                    <p>Studio luas dengan kapasitas hingga 12 orang, dilengkapi AC dan sound system</p>
+                </div>
             </div>
 
             <div class="fasilitas-card">
                 <img src="image/ChatGPT Image Jan 11, 2026, 08_47_06 PM 1.png" alt="Locker room">
+                <div class="fasilitas-text">
+                    <h3>Locker Room</h3>
+                    <p>Ruang ganti yang bersih dan nyaman dengan locker pribadi</p>
+                </div>
             </div>
 
             <div class="fasilitas-card">
                 <img src="image/ChatGPT Image Jan 11, 2026, 08_47_07 PM 1.png" alt="Shower Facilities">
+                <div class="fasilitas-text">
+                    <h3>Shower Facilities</h3>
+                    <p>Shower dengan air hangat dan perlengkapan mandi tersedia</p>
+                </div>
             </div>
 
             <div class="fasilitas-card">
                 <img src="image/ChatGPT Image Jan 11, 2026, 08_47_09 PM 1.png" alt="Lounge area">
+                <div class="fasilitas-text">
+                    <h3>Lounge Area</h3>
+                    <p>Area santai dengan minuman gratis dan WiFi untuk member</p>
+                </div>
             </div>
+
         </div>
+    </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
 
 {{-- COACH --}}
-<section class="coach-preview">
+<section id="coach" class="coach-preview">
     <div class="container">
         <h2>Coach</h2>
         <p>Coach Profesional untuk Pengalaman Terbaik</p>
-        <div class="fasilitas-grid">
-            <div class="fasilitas-card">
+        <div class="coach-grid">
+            <div class="coach-card">
                 <img src="image/Screenshot 2026-01-08 192955 4.png" alt="Reformer Pilates">
             </div>
 
-            <div class="fasilitas-card">
+            <div class="coach-card">
                 <img src="image/Screenshot 2026-01-08 192955 4.png" alt="Private studio">
             </div>
 
-            <div class="fasilitas-card">
+            <div class="coach-card">
                 <img src="image/Screenshot 2026-01-08 192955 4.png" alt="Group studio">
             </div>
         </div>
     </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
 
 {{-- FAQ --}}
-{{-- FAQ --}}
-<section class="faq-preview">
+<section id="faq" class=" faq-preview">
     <div class="container">
         <div class="faq-header">
             <p>FAQ</p>
@@ -354,7 +422,10 @@
         </div>
     </div>
 </section>
-<div class="section-divider"></div>
+
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
 
 {{-- CTA JOIN --}}
 <section class="cta">
