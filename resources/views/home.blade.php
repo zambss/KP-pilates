@@ -67,22 +67,47 @@
         <p>Ikuti event spesial dan manfaatkan promo eksklusif kami</p>
         <p>pilih paket membership</p>
     </div>
-
     <div class="event-grid">
-        <!-- CARD 1 -->
-        <div class="event-card" data-paket="Mat Pilates & Yoga">
-            <h3>Starter</h3>
-            <h3>BASIC</h3>
-            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
-            <hr>
-            <ul class="benefit-list">
-                <li>Instruktur bersertifikat</li>
-                <li>Maks 12 peserta per kelas</li>
-                <li>Matras tersedia</li>
-                <li>Durasi 60 menit</li>
-            </ul>
+        <!-- BASIC -->
+        <div class="event-card">
+            <span class="badge">STARTER</span>
+            <h3 class="title">BASIC</h3>
+            <p class="price">Rp 599K <span>/bulan</span></p>
 
-            <button class="btn-select">Pilih Paket</button>
+            <ul class="benefit">
+                <li>4 Kelas/bulan</li>
+                <li>Akses Mat Pilates</li>
+                <li>Loker Gratis</li>
+            </ul>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="event-card highlight">
+            <span class="badge">STARTER</span>
+            <h3 class="title">PREMIUM</h3>
+            <p class="price">Rp 999K <span>/bulan</span></p>
+
+            <ul class="benefit">
+                <li>8 Kelas/bulan</li>
+                <li>Mat + Reformer Pilates</li>
+                <li>1 Private Session</li>
+                <li>Towel Service</li>
+            </ul>
+        </div>
+
+        <!-- UNLIMITED -->
+        <div class="event-card">
+            <span class="badge">STARTER</span>
+            <h3 class="title">UNLIMITED</h3>
+            <p class="price">Rp 1.5jt <span>/bulan</span></p>
+
+            <ul class="benefit">
+                <li>Unlimited Kelas</li>
+                <li>Semua Jenis Pilates</li>
+                <li>2 Private Sessions</li>
+                <li>Priority Booking</li>
+                <li>VIP Lounge Access</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -93,6 +118,7 @@
 
 
 {{-- paket dan harga--}}
+
 <section class="pricing-section">
     <div class="pricing-header">
         <span class="pricing-subtitle">Paket & Harga</span>
@@ -225,20 +251,47 @@
             <button class="btn-select">Pilih Paket</button>
         </div>
 
-        <div class="promo-wrapper">
-            <div class="promo-box">
-                <div class="promo-text">
-                    <span class="promo-title">Promo Spesial!</span>
-                    <span class="promo-desc">
-                        Beli 5 sesi gratis 1 sesi • Beli 8 sesi gratis 2 sesi
-                    </span>
-                </div>
+        <!-- CARD 6 -->
+        <div class="pricing-card highlight" data-paket="Reformer Pilates">
+            <h4>Group Class</h4>
+            <h3>Reformer Pilates</h3>
+            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
 
-                <a href="/about" class="btn-promo">Dapatkan promo</a>
+            <ul class="price-list">
+                <li><span>1 Sesi</span><strong>Rp99.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp495.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp792.000</strong></li>
+            </ul>
+
+            <hr>
+
+            <ul class="benefit-list">
+                <li>Instruktur expert</li>
+                <li>Reformer machine premium</li>
+                <li>Studio eksklusif</li>
+                <li>Durasi 60 menit</li>
+            </ul>
+
+            <button class="btn-select">Pilih Paket</button>
+        </div>
+    </div>
+
+    <!-- PROMO (DI LUAR GRID) -->
+    <div class="promo-wrapper">
+        <div class="promo-box">
+            <div class="promo-text">
+                <span class="promo-title">Promo Spesial!</span>
+                <span class="promo-desc">
+                    Beli 5 sesi gratis 1 sesi • Beli 8 sesi gratis 2 sesi
+                </span>
             </div>
+
+            <a href="/about" class="btn-promo">Dapatkan promo</a>
         </div>
     </div>
 </section>
+
+
 
 <div class="section-divider-wrapper">
     <div class="section-divider"></div>
