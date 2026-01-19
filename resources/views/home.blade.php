@@ -58,15 +58,17 @@
     </div>
 </section>
 
-
 {{-- EVENT & PROMO --}}
 <section id="event" class="event-preview">
     <div class="container">
-        <h2>Event & Promo</h2>
-        <h2>jangan lewatkan event dan promo menarik</h2>
-        <p>Ikuti event spesial dan manfaatkan promo eksklusif kami</p>
-        <p>pilih paket membership</p>
+        <span class="event-label">Event & Promo</span>
+        <h2 class="event-title">Jangan Lewatkan Event & Promo Menarik</h2>
+        <p class="event-desc">
+            Ikuti event spesial dan manfaatkan promo eksklusif kami
+        </p>
+        <p class="event-sub">Pilih Paket Membership</p>
     </div>
+
     <div class="event-grid">
         <!-- BASIC -->
         <div class="event-card">
@@ -75,10 +77,11 @@
             <p class="price">Rp 599K <span>/bulan</span></p>
 
             <ul class="benefit">
-                <li>4 Kelas/bulan</li>
-                <li>Akses Mat Pilates</li>
-                <li>Loker Gratis</li>
+                <li><span class="check"></span>4 Kelas/Bulan</li>
+                <li><span class="check"></span>Akses Mat Pilates</li>
+                <li><span class="check"></span>Loker Gratis</li>
             </ul>
+
         </div>
 
         <!-- PREMIUM -->
@@ -88,10 +91,10 @@
             <p class="price">Rp 999K <span>/bulan</span></p>
 
             <ul class="benefit">
-                <li>8 Kelas/bulan</li>
-                <li>Mat + Reformer Pilates</li>
-                <li>1 Private Session</li>
-                <li>Towel Service</li>
+                <li><span class="check"></span>8 Kelas / Bulan</li>
+                <li><span class="check"></span>Mat + Reformer Pilates</li>
+                <li><span class="check"></span>1 Private Session</li>
+                <li><span class="check"></span>Towel Service</li>
             </ul>
         </div>
 
@@ -102,22 +105,25 @@
             <p class="price">Rp 1.5jt <span>/bulan</span></p>
 
             <ul class="benefit">
-                <li>Unlimited Kelas</li>
-                <li>Semua Jenis Pilates</li>
-                <li>2 Private Sessions</li>
-                <li>Priority Booking</li>
-                <li>VIP Lounge Access</li>
+                <li><span class="check"></span>Unlimited Kelas</li>
+                <li><span class="check"></span>Semua Jenis Pilates</li>
+                <li><span class="check"></span>2 Private Sessions</li>
+                <li><span class="check"></span>Priority Booking</li>
+                <li><span class="check"></span>VIP Lounge Access</li>
             </ul>
         </div>
     </div>
 </section>
+
 
 <div class="section-divider-wrapper">
     <div class="section-divider"></div>
 </div>
 
 
-{{-- paket dan harga--}}
+/*==================
+-- paket dan harga--
+====================*/
 
 <section class="pricing-section">
     <div class="pricing-header">

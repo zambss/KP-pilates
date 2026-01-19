@@ -25,11 +25,8 @@
         <div class="divider">or</div>
 
         <!-- FORM -->
-        <form id="loginForm">
+        <form id="loginForm" method="POST" action="{{ route('login') }}">
             @csrf
-
-            <input type="text" name="name" id="username" placeholder="Nama kamu" required>
-
             <input type="text" placeholder="Username / Email" required>
 
             <div class="password-field">
@@ -37,7 +34,7 @@
                 <span id="togglePassword">👁</span>
             </div>
 
-            <button id="openLogin" type="button" class="btn-login">Login</button>
+            <button id="openLogin" type="submit" class="btn-login">Login</button>
         </form>
     </div>
 </div>

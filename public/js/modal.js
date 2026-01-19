@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     efek scroll smooth
     ==================*/
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
+    anchor.addEventListener("click", function () {
 
         const targetId = this.getAttribute("href");
         const targetEl = document.querySelector(targetId);
@@ -86,6 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
     }
-
+    /*=================
+    SIDE BAR LOGIC
+    ===================*/
+    function toggleSidebar() {
+        document.querySelector('.sidebar').classList.toggle('active');
+    }
 });
+
 
