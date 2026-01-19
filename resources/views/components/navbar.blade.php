@@ -12,13 +12,26 @@
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            @if(session('customer_login'))
+            <li class="user-menu">
+                <button class="user-btn">
+                    {{ session('customer_name') }} ⌄
+                </button>
 
-            <div class="nav-action">
-                <!-- BUTTON POPUP -->
-                <a href="#" class="btn-nav" id="openLogin">
-                    Login / Join Class
-                </a>
-            </div>
+                <div class="user-dropdown">
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
+
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                </div>
+            </li>
+            @else
+            <li>
+                <button id="openLogin" class="btn-login">Login</button>
+            </li>
+            @endif
         </div>
     </nav>
 </div>

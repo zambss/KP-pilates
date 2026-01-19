@@ -500,17 +500,6 @@ hr {
     margin-bottom: 6px;
 }
 
-/* BUTTON CARD */
-.btn-select {
-    width: 100%;
-    margin-top: 18px;
-    padding: 12px;
-    border-radius: 30px;
-    background: #937B57;
-    color: #FAF1D6;
-    border: none;
-    cursor: pointer;
-}
 
 /* HIGHLIGHT CARD */
 .pricing-card.highlight {
@@ -563,7 +552,7 @@ hr {
 }
 
 /* BUTTON PROMO */
-.btn-promo {
+.btn-select {
     background-color: #fff;
     color: #000;
     padding: 12px 26px;
@@ -575,7 +564,23 @@ hr {
     transition: 0.25s ease;
 }
 
-.btn-promo:hover {
+
+/* BUTTON CARD */
+.btn-select {
+    width: 100%;
+    align-items: left;
+    margin-top: 18px;
+    padding: 12px 26px;
+    border-radius: 14px;
+    background-color: transparent;
+    border: 10px;
+    border-color: #937B57;
+    cursor: pointer;
+
+    border: 2px solid #937B57; /* INI KUNCINYA */
+}
+
+.btn-select:hover {
     background-color: #f1f1f1;
     transform: translateY(-2px);
 }
@@ -1033,6 +1038,7 @@ navbar menu atas
 
     z-index: 1000;
     border-bottom: 1px solid rgba(0,0,0,0.05);
+    pointer-events: auto;
 }
 
 .navbar-container {
@@ -1065,6 +1071,44 @@ navbar menu atas
 .nav-menu a:hover {
     color: #f7f6f2;
 }
+.user-menu {
+    position: relative;
+}
+
+.user-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    display: none;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a,
+.user-dropdown button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 
 /*============
 footer bawah

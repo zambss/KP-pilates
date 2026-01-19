@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("closeLogin");
 
     if (openBtn && modal) {
-        openBtn.addEventListener("click", () => {
+        openBtn.addEventListener("click", (e) => {
+            e.preventDefault();
             modal.classList.add("active");
         });
     }
@@ -70,24 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =======================
-       LOGIN BUTTON (SIMULASI)
-    ======================= */
-    const loginBtn = document.querySelector(".btn-login");
-
-    if (loginBtn) {
-        loginBtn.addEventListener("click", () => {
-            const selectedRole = localStorage.getItem("selectedRole") || "user";
-
-            localStorage.setItem("isLogin", "true");
-            localStorage.setItem("username", "Azzam");
-            localStorage.setItem("role", selectedRole);
-
-            // redirect simulasi
-            window.location.href = "/dashboard";
-        });
-    }
-
 
     /* =======================
        NAVBAR AUTH STATE
@@ -106,7 +89,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
-button.addEventListener('click', () => {
-  modal.classList.remove('hidden')
-})

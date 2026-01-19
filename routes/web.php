@@ -1,24 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-// routes/web.php
-Route::get('/', function () {
-    return view('home');
-});
-
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 
-    Route::get('/dashboard/calendar', [DashboardController::class, 'calendar']);
-    Route::get('/dashboard/my-card', [DashboardController::class, 'card']);
-    Route::get('/dashboard/packages', [DashboardController::class, 'packages']);
-    Route::get('/dashboard/notifications', [DashboardController::class, 'notifications']);
-    Route::get('/dashboard/profile', [DashboardController::class, 'profile']);
-});
+Route::post('/login', [AuthController::class, 'login'])
+      ->name('login');
 
-Route::get('/dev-dashboard', function () {
-    return view('dashboard');
+Route::middleware('customer.auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('dashboard');
 });

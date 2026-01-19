@@ -171,4 +171,7 @@
     margin-top: 12px;
     margin-bottom: 12px;
     pointer-events: auto;
+    position: relative;
+    z-index: 10001;
 }
+

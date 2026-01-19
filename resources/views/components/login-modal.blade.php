@@ -25,20 +25,19 @@
         <div class="divider">or</div>
 
         <!-- FORM -->
-        <form>
-            <input type="text" placeholder="Username / Email">
+        <form id="loginForm">
+            @csrf
+
+            <input type="text" name="name" id="username" placeholder="Nama kamu" required>
+
+            <input type="text" placeholder="Username / Email" required>
 
             <div class="password-field">
-                <input type="password" id="password" placeholder="Password">
+                <input type="password" id="password" placeholder="Password" required>
                 <span id="togglePassword">👁</span>
             </div>
-            <div class="forgot-password">
-                <a href="#">Lupa password?</a>
-            </div>
-            <button type="button" class="btn-login" id="openLoginModal">
-                Login
-            </button>
-        </form>
 
+            <button id="openLogin" type="button" class="btn-login">Login</button>
+        </form>
     </div>
 </div>

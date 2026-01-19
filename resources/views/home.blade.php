@@ -150,8 +150,6 @@
                 <li>Matras tersedia</li>
                 <li>Durasi 60 menit</li>
             </ul>
-
-            <button class="btn-select">Pilih Paket</button>
         </div>
 
         <!-- CARD 2 -->
@@ -174,105 +172,91 @@
                 <li>Peralatan lengkap</li>
                 <li>Durasi 60 menit</li>
             </ul>
-
-            <button class="btn-select">Pilih Paket</button>
         </div>
 
         <!-- CARD 3 -->
-        <div class="pricing-card highlight" data-paket="Reformer Pilates">
+        <div class="pricing-card" data-paket="Chair & Swing Yoga">
             <h4>Group Class</h4>
-            <h3>Reformer Pilates</h3>
-            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
+            <h3>Chair & Swing Yoga</h3>
+            <p class="desc">Kelas dengan peralatan khusus</p>
 
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp99.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp495.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp792.000</strong></li>
+                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
             </ul>
 
             <hr>
 
             <ul class="benefit-list">
-                <li>Instruktur expert</li>
-                <li>Reformer machine premium</li>
-                <li>Studio eksklusif</li>
+                <li>Instruktur bersertifikat</li>
+                <li>Alat premium per kelas</li>
+                <li>Peralatan lengkap</li>
                 <li>Durasi 60 menit</li>
             </ul>
-
-            <button class="btn-select">Pilih Paket</button>
         </div>
-
         <!-- CARD 4 -->
-        <div class="pricing-card highlight" data-paket="Reformer Pilates">
+        <div class="pricing-card" data-paket="Chair & Swing Yoga">
             <h4>Group Class</h4>
-            <h3>Reformer Pilates</h3>
-            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
+            <h3>Chair & Swing Yoga</h3>
+            <p class="desc">Kelas dengan peralatan khusus</p>
 
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp99.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp495.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp792.000</strong></li>
+                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
             </ul>
 
             <hr>
 
             <ul class="benefit-list">
-                <li>Instruktur expert</li>
-                <li>Reformer machine premium</li>
-                <li>Studio eksklusif</li>
+                <li>Instruktur bersertifikat</li>
+                <li>Alat premium per kelas</li>
+                <li>Peralatan lengkap</li>
                 <li>Durasi 60 menit</li>
             </ul>
-
-            <button class="btn-select">Pilih Paket</button>
         </div>
-
-
         <!-- CARD 5 -->
-        <div class="pricing-card highlight" data-paket="Reformer Pilates">
+        <div class="pricing-card" data-paket="Chair & Swing Yoga">
             <h4>Group Class</h4>
-            <h3>Reformer Pilates</h3>
-            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
+            <h3>Chair & Swing Yoga</h3>
+            <p class="desc">Kelas dengan peralatan khusus</p>
 
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp99.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp495.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp792.000</strong></li>
+                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
             </ul>
 
             <hr>
 
             <ul class="benefit-list">
-                <li>Instruktur expert</li>
-                <li>Reformer machine premium</li>
-                <li>Studio eksklusif</li>
+                <li>Instruktur bersertifikat</li>
+                <li>Alat premium per kelas</li>
+                <li>Peralatan lengkap</li>
                 <li>Durasi 60 menit</li>
             </ul>
-
-            <button class="btn-select">Pilih Paket</button>
         </div>
-
         <!-- CARD 6 -->
-        <div class="pricing-card highlight" data-paket="Reformer Pilates">
+        <div class="pricing-card" data-paket="Chair & Swing Yoga">
             <h4>Group Class</h4>
-            <h3>Reformer Pilates</h3>
-            <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
+            <h3>Chair & Swing Yoga</h3>
+            <p class="desc">Kelas dengan peralatan khusus</p>
 
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp99.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp495.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp792.000</strong></li>
+                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
+                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
+                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
             </ul>
 
             <hr>
 
             <ul class="benefit-list">
-                <li>Instruktur expert</li>
-                <li>Reformer machine premium</li>
-                <li>Studio eksklusif</li>
+                <li>Instruktur bersertifikat</li>
+                <li>Alat premium per kelas</li>
+                <li>Peralatan lengkap</li>
                 <li>Durasi 60 menit</li>
             </ul>
-
-            <button class="btn-select">Pilih Paket</button>
         </div>
     </div>
 
@@ -285,8 +269,9 @@
                     Beli 5 sesi gratis 1 sesi • Beli 8 sesi gratis 2 sesi
                 </span>
             </div>
-
-            <a href="/about" class="btn-promo">Dapatkan promo</a>
+            <div class="promo-right">
+                <button class="btn-select">Pilih Paket</button>
+            </div>
         </div>
     </div>
 </section>
