@@ -85,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
     }
+
+
     /*=================
     SIDE BAR LOGIC
     ===================*/
@@ -92,5 +94,18 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.sidebar').classList.toggle('active');
     }
 });
+    /*=================
+    Nav BAR HAM
+    ===================*/
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.getElementById('navToggle');
+        const navMenu   = document.getElementById('navMenu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
 
 

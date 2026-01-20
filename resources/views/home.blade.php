@@ -40,21 +40,28 @@
         </div>
 
         <div class="hero-right">
+
+            <!-- CARD CLICKABLE -->
             <div class="class-card">
                 <img src="image/Screenshot 2026-01-08 204300 1.png" alt="Reformer Pilates" class="card-img">
 
-                <div class="card-info">
+                <!-- GLASS ACTION BAR -->
+                <a href="/calendar" class="card-glass-action">
                     <div class="info-text">
                         <span class="category">Weekly Classes</span>
                         <h4>Reformer Pilates</h4>
                         <p>Today, 10:00 AM</p>
                     </div>
+
                     <div class="arrow-circle">
                         <i class="fas fa-arrow-right"></i>
                     </div>
-                </div>
+                </a>
             </div>
+
+
         </div>
+
     </div>
 </section>
 
@@ -121,9 +128,9 @@
 </div>
 
 
-/*==================
+{{-- /*==================
 -- paket dan harga--
-====================*/
+====================*/ --}}
 
 <section class="pricing-section">
     <div class="pricing-header">
@@ -482,6 +489,9 @@ ABOUT SECTION
         </div>
     </div>
 </section>
+
+<div class="section-bawah">
+</div>
 
 
 

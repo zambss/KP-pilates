@@ -31,7 +31,7 @@
             <ul class="sidebar-menu">
 
                 <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('dashboardLogin.index') }}">
                         <i class="fas fa-home"></i>
                         <span>Dashboard</span>
                     </a>

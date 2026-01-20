@@ -20,4 +20,7 @@ class DashboardController extends Controller
             
         ]);
     }
+    public function loin(){
+        return view ('dashboardLogin.index');
+    }
 }
