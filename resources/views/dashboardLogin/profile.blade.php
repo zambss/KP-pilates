@@ -50,12 +50,6 @@
                 <input type="password" value="********">
             </div>
 
-            <div class="profile-action">
-                <button type="submit" class="btn-primary">
-                    Simpan Perubahan
-                </button>
-            </div>
-
         </form>
 
     </div>

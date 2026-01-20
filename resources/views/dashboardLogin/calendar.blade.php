@@ -51,7 +51,10 @@
         <div class="calendar-nav">
             <button>&larr;</button>
             <button class="today-btn">Hari Ini</button>
-            <button>&rarr;</button>
+            <a href="{{ route('dashboard.schedule') }}" class="calendar-arrow">
+                &rarr;
+            </a>
+
         </div>
     </div>
 

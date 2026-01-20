@@ -46,7 +46,8 @@
                 <img src="image/Screenshot 2026-01-08 204300 1.png" alt="Reformer Pilates" class="card-img">
 
                 <!-- GLASS ACTION BAR -->
-                <a href="/calendar" class="card-glass-action">
+                <a href="{{ route('dashboardLogin.calendar') }}" class="card-glass-action">
+
                     <div class="info-text">
                         <span class="category">Weekly Classes</span>
                         <h4>Reformer Pilates</h4>
@@ -580,8 +581,7 @@ ABOUT SECTION
     </div>
 </section>
 
-<div class="section-divider-wrapper">
-    <div class="section-divider"></div>
+<div class="section-bawah">
 </div>
 
 {{-- CTA JOIN --}}

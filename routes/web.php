@@ -4,83 +4,26 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 
+/*
+|--------------------------------------------------------------------------
+| PUBLIC PAGES (TANPA LOGIN)
+|--------------------------------------------------------------------------
+*/
 
-Route::get('/fasilitas', function () {
-    return view('fasilitas');
-});
-
-Route::get('/coach', function () {
-    return view('coach');
-});
-
-Route::get('/event', function () {
-    return view('event');
-});
-
-Route::get('/faq', function () {
-    return view('faq');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-
-
-
-/*Route::get('/join-class', [DashboardController::class, 'index'])
-    ->middleware('auth')
-    ->name('dashboard');*/
-
-
-
-    Route::middleware('auth')->group(function () {
-    Route::get('/dashboardLogin/index', [DashboardController::class, 'loin'])
-        ->name('dashboardLogin.index');
-        
-// routes/web.php
 Route::get('/', [DashboardController::class, 'index'])->name('home');
 
-    Route::get('/calendar', fn () => view('dashboardLogin.calendar'))
-        ->name('dashboardLogin.calendar');
+Route::get('/event', fn () => view('event'));
+Route::get('/fasilitas', fn () => view('fasilitas'));
+Route::get('/coach', fn () => view('coach'));
+Route::get('/faq', fn () => view('faq'));
+Route::get('/contact', fn () => view('contact'));
 
-    Route::get('/card', fn () => view('dashboardLogin.card'))
-        ->name('dashboardLogin.card');
 
-    Route::get('/package', fn () => view('dashboardLogin.packages'))
-        ->name('dashboardLogin.package');
-
-    Route::get('/notification', fn () => view('dashboardLogin.notification'))
-        ->name('dashboardLogin.notification');
-
-    Route::get('/profile', fn () => view('dashboardLogin.profile'))
-        ->name('dashboardLogin.profile');
-
-});
-
-/* =====================
-   DASHBOARD (LOGIN)
-===================== */
-Route::middleware('auth')->prefix('dashboard')->group(function () {
-
-    Route::get('/', [DashboardController::class, 'dashboard'])
-        ->name('dashboardLogin.index');
-
-    Route::get('/calendar', [DashboardController::class, 'calendar'])
-        ->name('calendar');
-
-    Route::get('/card', [DashboardController::class, 'card'])
-        ->name('card');
-
-    Route::get('/package', [DashboardController::class, 'package'])
-        ->name('package');
-
-    Route::get('/notification', [DashboardController::class, 'notification'])
-        ->name('notification');
-
-    Route::get('/profile', [DashboardController::class, 'profile'])
-        ->name('profile');
-});
+/*
+|--------------------------------------------------------------------------
+| AUTH (JANGAN DIUBAH)
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginProcess']);
@@ -89,3 +32,51 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'registerProcess']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
+
+
+/*
+|--------------------------------------------------------------------------
+| DASHBOARD (SETELAH LOGIN)
+|--------------------------------------------------------------------------
+| SEMUA PAGE DASHBOARD ADA DI FOLDER:
+| resources/views/dashboardLogin/
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware('auth')->prefix('dashboard')->group(function () {
+
+    // DASHBOARD HOME
+    Route::get('/', [DashboardController::class, 'loin'])
+        ->name('dashboardLogin.index');
+
+    // KALENDER DASHBOARD
+    Route::get('/calendar', function () {
+        return view('dashboardLogin.calendar');
+    })->name('dashboardLogin.calendar');
+
+    // PAGE PILIH JADWAL (KALENDER KHUSUS)
+    Route::get('/schedule', function () {
+        return view('dashboardLogin.schedule');
+    })->name('dashboard.schedule');
+
+    // CARD SAYA
+    Route::get('/card', function () {
+        return view('dashboardLogin.my-card');
+    })->name('dashboardLogin.my-card');
+
+    // PAKET PILATES
+    Route::get('/package', function () {
+        return view('dashboardLogin.packages');
+    })->name('dashboardLogin.package');
+
+    // NOTIFIKASI
+    Route::get('/notification', function () {
+        return view('dashboardLogin.notifications');
+    })->name('dashboardLogin.notifications');
+
+    // PROFILE
+    Route::get('/profile', function () {
+        return view('dashboardLogin.profile');
+    })->name('dashboardLogin.profile');
+
+});

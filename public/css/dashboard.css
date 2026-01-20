@@ -405,6 +405,23 @@ body {
 .calendar-nav .today-btn {
     background: #7f7151;
 }
+.calendar-arrow {
+    background: #9C8B63;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s ease;
+}
+
+.calendar-arrow:hover {
+    background: #7f7151;
+    transform: translateX(2px);
+}
 
 .calendar-grid {
     display: grid;
@@ -481,6 +498,169 @@ body {
         font-size: 10px;
     }
 
+}
+/* =========================
+   SCHEDULE PAGE
+========================= */
+
+.schedule-page {
+    padding: 40px 0;
+    color: #2F2F2F;
+}
+
+/* HEADER */
+.schedule-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.schedule-header h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.schedule-header p {
+    font-size: 14px;
+    color: #7b725f;
+}
+
+.schedule-tabs {
+    margin-top: 18px;
+    display: inline-flex;
+    background: #E6D9B5;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.tab-btn {
+    padding: 10px 22px;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    cursor: pointer;
+    color: #5f553f;
+}
+
+.tab-btn.active {
+    background: #937B57;
+    color: #fff;
+}
+
+/* CARD */
+.schedule-card {
+    background: #EFE2C3;
+    border-radius: 24px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+/* TOP */
+.schedule-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.schedule-top h3 {
+    font-size: 18px;
+}
+
+/* GRID */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 80px repeat(6, 1fr);
+    gap: 12px;
+}
+
+.time-col {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    font-size: 12px;
+    color: #7b725f;
+}
+
+.day-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.day-col strong {
+    font-size: 13px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+/* CLASS BOX */
+.class-box {
+    background: rgba(255,255,255,0.35);
+    border: 1px solid #bfae86;
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.class-box:hover {
+    background: rgba(147,123,87,0.25);
+}
+
+/* LEGEND */
+.schedule-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.dot.selected {
+    background: #937B57;
+}
+
+.dot.available {
+    background: #d6c7a1;
+}
+
+/* ACTION */
+.schedule-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.btn-back {
+    font-size: 13px;
+    text-decoration: none;
+    color: #5f553f;
+}
+
+.btn-next {
+    background: #E0C15A;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .schedule-grid {
+        overflow-x: auto;
+        grid-template-columns: 60px repeat(6, 120px);
+    }
 }
 
 
