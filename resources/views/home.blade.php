@@ -148,12 +148,29 @@
             <h4>Group Class</h4>
             <h3>Mat Pilates & Yoga</h3>
             <p class="desc">Kelas dasar untuk pemula hingga menengah</p>
-
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp60.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp300.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp480.000</strong></li>
+                <li>
+                    <button class="price-option" data-sesi="1" data-harga="60000">
+                        <span>1 Sesi</span>
+                        <strong>Rp60.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="5" data-harga="300000">
+                        <span>5 Sesi</span>
+                        <strong>Rp300.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="8" data-harga="480000">
+                        <span>8 Sesi</span>
+                        <strong>Rp480.000</strong>
+                    </button>
+                </li>
             </ul>
+
 
             <hr>
 
@@ -172,10 +189,28 @@
             <p class="desc">Kelas dengan peralatan khusus</p>
 
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
+                <li>
+                    <button class="price-option" data-sesi="1" data-harga="60000">
+                        <span>1 Sesi</span>
+                        <strong>Rp60.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="5" data-harga="300000">
+                        <span>5 Sesi</span>
+                        <strong>Rp300.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="8" data-harga="480000">
+                        <span>8 Sesi</span>
+                        <strong>Rp480.000</strong>
+                    </button>
+                </li>
             </ul>
+
 
             <hr>
 
@@ -194,10 +229,28 @@
             <p class="desc">Kelas dengan peralatan khusus</p>
 
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
+                <li>
+                    <button class="price-option" data-sesi="1" data-harga="60000">
+                        <span>1 Sesi</span>
+                        <strong>Rp60.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="5" data-harga="300000">
+                        <span>5 Sesi</span>
+                        <strong>Rp300.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="8" data-harga="480000">
+                        <span>8 Sesi</span>
+                        <strong>Rp480.000</strong>
+                    </button>
+                </li>
             </ul>
+
 
             <hr>
 
@@ -215,9 +268,26 @@
             <p class="desc">Kelas dengan peralatan khusus</p>
 
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
+                <li>
+                    <button class="price-option" data-sesi="1" data-harga="60000">
+                        <span>1 Sesi</span>
+                        <strong>Rp60.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="5" data-harga="300000">
+                        <span>5 Sesi</span>
+                        <strong>Rp300.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="8" data-harga="480000">
+                        <span>8 Sesi</span>
+                        <strong>Rp480.000</strong>
+                    </button>
+                </li>
             </ul>
 
             <hr>
@@ -236,10 +306,28 @@
             <p class="desc">Kelas dengan peralatan khusus</p>
 
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
+                <li>
+                    <button class="price-option" data-sesi="1" data-harga="60000">
+                        <span>1 Sesi</span>
+                        <strong>Rp60.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="5" data-harga="300000">
+                        <span>5 Sesi</span>
+                        <strong>Rp300.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="8" data-harga="480000">
+                        <span>8 Sesi</span>
+                        <strong>Rp480.000</strong>
+                    </button>
+                </li>
             </ul>
+
 
             <hr>
 
@@ -257,10 +345,28 @@
             <p class="desc">Kelas dengan peralatan khusus</p>
 
             <ul class="price-list">
-                <li><span>1 Sesi</span><strong>Rp80.000</strong></li>
-                <li><span>5 Sesi</span><strong>Rp400.000</strong></li>
-                <li><span>8 Sesi</span><strong>Rp640.000</strong></li>
+                <li>
+                    <button class="price-option" data-sesi="1" data-harga="60000">
+                        <span>1 Sesi</span>
+                        <strong>Rp60.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="5" data-harga="300000">
+                        <span>5 Sesi</span>
+                        <strong>Rp300.000</strong>
+                    </button>
+                </li>
+
+                <li>
+                    <button class="price-option" data-sesi="8" data-harga="480000">
+                        <span>8 Sesi</span>
+                        <strong>Rp480.000</strong>
+                    </button>
+                </li>
             </ul>
+
 
             <hr>
 

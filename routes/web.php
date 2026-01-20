@@ -4,24 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 
-// routes/web.php
-Route::get('/', [DashboardController::class, 'index'])->name('home');
-
-    Route::get('/calendar', fn () => view('calendar'))
-        ->name('calendar');
-
-    Route::get('/card', fn () => view('card'))
-        ->name('card');
-
-    Route::get('/package', fn () => view('package'))
-        ->name('package');
-
-    Route::get('/notification', fn () => view('notification'))
-        ->name('notification');
-
-    Route::get('/profile', fn () => view('profile'))
-        ->name('profile');
-
 
 Route::get('/fasilitas', function () {
     return view('fasilitas');
@@ -55,6 +37,49 @@ Route::get('/contact', function () {
     Route::middleware('auth')->group(function () {
     Route::get('/dashboardLogin/index', [DashboardController::class, 'loin'])
         ->name('dashboardLogin.index');
+        
+// routes/web.php
+Route::get('/', [DashboardController::class, 'index'])->name('home');
+
+    Route::get('/calendar', fn () => view('dashboardLogin.calendar'))
+        ->name('dashboardLogin.calendar');
+
+    Route::get('/card', fn () => view('dashboardLogin.card'))
+        ->name('dashboardLogin.card');
+
+    Route::get('/package', fn () => view('dashboardLogin.packages'))
+        ->name('dashboardLogin.package');
+
+    Route::get('/notification', fn () => view('dashboardLogin.notification'))
+        ->name('dashboardLogin.notification');
+
+    Route::get('/profile', fn () => view('dashboardLogin.profile'))
+        ->name('dashboardLogin.profile');
+
+});
+
+/* =====================
+   DASHBOARD (LOGIN)
+===================== */
+Route::middleware('auth')->prefix('dashboard')->group(function () {
+
+    Route::get('/', [DashboardController::class, 'dashboard'])
+        ->name('dashboardLogin.index');
+
+    Route::get('/calendar', [DashboardController::class, 'calendar'])
+        ->name('calendar');
+
+    Route::get('/card', [DashboardController::class, 'card'])
+        ->name('card');
+
+    Route::get('/package', [DashboardController::class, 'package'])
+        ->name('package');
+
+    Route::get('/notification', [DashboardController::class, 'notification'])
+        ->name('notification');
+
+    Route::get('/profile', [DashboardController::class, 'profile'])
+        ->name('profile');
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');

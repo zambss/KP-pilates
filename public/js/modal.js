@@ -108,4 +108,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    /*=================
+    Paket harga
+    ===================*/
+    document.querySelectorAll('.price-list li').forEach(item => {
+    item.addEventListener('click', () => {
+        item
+          .closest('.price-list')
+          .querySelectorAll('li')
+          .forEach(li => li.classList.remove('active'));
+
+        item.classList.add('active');
+    });
+});
+document.querySelectorAll('.price-option').forEach(button => {
+    button.addEventListener('click', () => {
+
+        // reset active di card ini saja
+        const list = button.closest('.price-list');
+        list.querySelectorAll('.price-option')
+            .forEach(btn => btn.classList.remove('active'));
+
+        button.classList.add('active');
+
+        // ambil data untuk modal (nanti)
+        const sesi  = button.dataset.sesi;
+        const harga = button.dataset.harga;
+
+        console.log('Pilih paket:', sesi, harga);
+
+        // TODO:
+        // openPaymentModal(sesi, harga);
+    });
+});
 

@@ -724,11 +724,16 @@ Landing page dashboard + jadwal
     padding: 28px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.pricing-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}/* =================
+   PRICING CARD
+================= */
+.pricing-card {
+    background: transparent;
+    border: 1.5px solid #8f8a7c;
+    border-radius: 20px;
+    padding: 28px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* CARD HEADER */
@@ -752,55 +757,106 @@ Landing page dashboard + jadwal
     margin-bottom: 18px;
 }
 
-/* PRICE LIST */
+/* =================
+   PRICE LIST (WRAPPER)
+================= */
 .price-list {
-    color: #000000;
     list-style: none;
     padding: 0;
     margin: 0;
+    color: #000;
 }
 
-.price-list li {
+/* =================
+   PRICE OPTION (⬅️ DIUBAH: SATU-SATUNYA ELEMEN KLIK)
+================= */
+.price-option {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    border: 1.2px solid #8f8a7c;
-    border-radius: 14px;
     padding: 14px 16px;
     margin-bottom: 12px;
 
-    font-size: 14px;
+    border-radius: 14px;
+    border: 1.2px solid #8f8a7c;
     background: transparent;
+
+    font-size: 14px;
+    color: #000;
+
+    cursor: pointer;                     /* ✅ CLICKABLE */
+    text-align: left;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+/* ⬅️ DIPINDAHKAN dari .price-list li:hover */
+.price-option:hover {
+    background: rgba(147, 123, 87, 0.08);
+    border-color: #937B57;
+    transform: translateY(-1px);
+}
+
+/* ⬅️ STATUS AKTIF (PILIHAN USER) */
+.price-option.active {
+    background: rgba(147, 123, 87, 0.15);
+    border-color: #937B57;
+}
+
+/* =================
+   PRICE TEXT STRUCTURE
+================= */
+
+/* ⬅️ DITAMBAHKAN: container kiri */
+.price-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* ⬅️ DITAMBAHKAN: container kanan */
+.price-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
 }
 
 .price-list small {
-    display: block;
     font-size: 11px;
     color: #888;
-    margin-top: 4px;
 }
 
 .price-list del {
     font-size: 11px;
     color: #aaa;
-    margin-left: 6px;
 }
 
-/* DIVIDER */
+/* =================
+   DIVIDER & BENEFIT
+================= */
 .pricing-card hr {
     border: none;
     border-top: 1px solid #8f8a7c;
     margin: 20px 0;
 }
 
-/* BENEFIT LIST */
 .benefit-list {
     list-style: none;
     padding: 0;
     font-size: 13px;
 }
 
+.benefit-list li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 8px
+}
 .benefit-list li {
     position: relative;
     padding-left: 16px;
