@@ -357,74 +357,69 @@ Landing page dashboard + jadwal
 }
 
 /* =====================
-   HERO MOBILE FIX FINAL
+   HERO MOBILE — CLEAN & UX FRIENDLY
 ===================== */
 @media (max-width: 768px) {
 
-    
-    .card-glass-action {
-        padding: 12px 14px;
-    }
-
-    .card-glass-action h4 {
-        font-size: 14px;
-    }
-
-    .card-glass-action p {
-        font-size: 11px;
-    }
-
-    .arrow-circle {
-        width: 32px;
-        height: 32px;
-    }
-
-    /* HERO WRAPPER */
+    /* HERO BACKGROUND */
     .hero {
-        display: block;            /* ✅ MATIKAN FLEX */
-        min-height: unset;
-        padding: 60px 0 40px;
+        min-height: unset;          /* ⛔ MATIKAN 100vh */
+        height: auto;               /* ✅ ikut konten */
+        padding: 48px 0 32px;       /* ✅ JANGAN GEDE */
+        display: block;             /* ⛔ MATIKAN FLEX */
         margin-top: -60px;
+        background-position: center center;
     }
 
     /* GLASS CONTAINER */
     .hero-glass {
         width: 92%;
-        margin: 0 auto;            /* ✅ ANCHOR KE ATAS */
-        padding: 22px;
-        gap: 22px;
-        margin-top: unset;
-        margin-bottom: unset;
+        margin: 0 auto;
+        padding: 22px 18px;         /* 🔥 kecilkan */
+        gap: 20px;
 
         display: flex;
-        flex-direction: column;   /* ✅ STACK */
-        align-items: stretch;
+        flex-direction: column;
 
-        border-radius: 26px;
-        border: none;
+        max-height: 70vh;           /* ✅ KUNCI */
+        overflow: hidden;           /* 🔥 STOP MEMANJANG */
+
+        border-radius: 24px;
     }
 
     /* LEFT CONTENT */
+    .hero-subtitle {
+        font-size: 12px;
+        letter-spacing: 0.8px;
+    }
+
     .hero-left h1 {
-        font-size: 28px;           /* ✅ LEBIH AMAN */
+        font-size: 28px;
         line-height: 1.25;
-        margin: 16px 0;
+        margin: 14px 0;
     }
 
     .hero-left p {
         font-size: 14px;
-        margin-bottom: 20px;
+        line-height: 1.6;
+        margin-bottom: 18px;
         max-width: 100%;
     }
 
-    /* BUTTON */
+    /* CTA BUTTON */
     .hero-buttons {
         flex-direction: column;
         gap: 10px;
-        margin-bottom: 24px;
+        margin-bottom: 26px;
     }
 
-    /* STATS */
+    .btn-primary {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 14px;
+    }
+
+    /* STATS — TETAP HORIZONTAL (JANGAN KOLUMN) */
     .hero-stats {
         display: flex;
         justify-content: space-between;
@@ -435,32 +430,51 @@ Landing page dashboard + jadwal
         font-size: 20px;
     }
 
-    /* RIGHT IMAGE */
+    .stat-box span {
+        font-size: 10px;
+    }
+
+    /* RIGHT CARD */
     .hero-right {
         width: 100%;
+        display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     .class-card {
         width: 100%;
-        max-width: 280px;          /* ✅ JANGAN FULL */
-        height: 240px;
+        max-width: 280px;
+        height: 230px;
         margin: 0 auto;
-        border-radius: 24px;
-    }
-    
-    .hero-right {
-        align-items: center;
+        border-radius: 22px;
     }
 
-    .class-card-caption {
-        font-size: 12px;
-        margin-top: 12px;
+    /* GLASS ACTION BAR */
+    .card-glass-action {
+        padding: 12px 14px;
+        border-radius: 16px;
     }
 
+    .card-glass-action h4 {
+        font-size: 14px;
+        margin: 2px 0;
+    }
 
+    .card-glass-action p {
+        font-size: 11px;
+    }
+
+    .card-glass-action .category {
+        font-size: 10px;
+    }
+
+    .arrow-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
 }
-
 
 
 
@@ -880,64 +894,6 @@ Landing page dashboard + jadwal
     );
 }
 
-/* =================
-   PROMO SECTION
-================= */
-
-.promo-wrapper {
-    margin: 80px auto 0;
-    max-width: 1200px;
-    width: 90%;
-}
-
-.promo-box {
-    background-color: #B3A27D;
-    border-radius: 18px;
-    padding: clamp(24px, 4vw, 48px);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-}
-
-.promo-text {
-    max-width: 70%;
-    text-align: left;
-}
-
-.promo-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #000;
-}
-
-.promo-desc {
-    font-size: 14px;
-    margin-top: 6px;
-    color: #000;
-    opacity: 0.9;
-}
-
-/* BUTTON */
-.btn-select {
-    width: 100%;
-    padding: 12px 26px;
-    border-radius: 14px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-
-    background: #fff;
-    color: #000;
-    border: 2px solid #937B57;
-    transition: 0.25s ease;
-}
-
-.btn-select:hover {
-    background-color: #f1f1f1;
-    transform: translateY(-2px);
-}
 
 /* =================
    RESPONSIVE

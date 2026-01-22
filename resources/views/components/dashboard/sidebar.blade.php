@@ -1,6 +1,7 @@
 {{-- components/dashboard/sidebar.blade.php --}}
 
 <aside class="sidebar">
+
     <div class="sidebar-header">
         <a href="/" class="back-home">← Kembali ke Beranda</a>
         <p class="member-area">Member Area</p>
@@ -11,6 +12,7 @@
         </div>
     </div>
 
+    {{-- MENU UTAMA --}}
     <ul class="sidebar-menu">
 
         <li class="{{ request()->routeIs('dashboardLogin.index') ? 'active' : '' }}">
@@ -56,4 +58,16 @@
         </li>
 
     </ul>
+
+    {{-- LOGOUT (POJOK BAWAH) --}}
+    <div class="sidebar-logout">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </form>
+    </div>
+
 </aside>

@@ -12,7 +12,7 @@ class AuthController extends Controller
     // halaman login
     public function login()
     {
-        return view('auth.login');
+        return view('components.login-modal');
     }
 
     // proses login

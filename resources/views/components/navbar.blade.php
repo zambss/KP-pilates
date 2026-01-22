@@ -20,25 +20,26 @@
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
 
-            @if(session('customer_login'))
+            {{-- =========================
+               AUTH SECTION (DIPERBAIKI)
+               ========================= --}}
+            @auth
             <li class="user-menu">
                 <button class="user-btn">
-                    {{ session('customer_name') }} ⌄
+                    {{ Auth::user()->name }} ⌄
                 </button>
 
                 <div class="user-dropdown">
-                    <a href="{{ route('dashboard') }}">Dashboard</a>
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit">Logout</button>
-                    </form>
+                    <a href="{{ route('dashboardLogin.index') }}">Dashboard</a>
                 </div>
             </li>
             @else
             <li>
-                <button id="openLogin" class="btn-login">Login</button>
+                <button id="openLogin" class="btn-login">
+                    Login
+                </button>
             </li>
-            @endif
+            @endauth
         </ul>
 
     </div>

@@ -59,13 +59,15 @@
     </div>
 
     <div class="calendar-grid">
-        @for ($i = 19; $i <= 25; $i++) <div class="calendar-day">
-            <strong>SEN</strong>
-            <h4>{{ $i }}</h4>
+        @foreach ($days as $day)
+        <div class="calendar-day">
+            <strong>{{ strtoupper($day->translatedFormat('D')) }}</strong>
+            <h4>{{ $day->format('d') }}</h4>
             <small>Klik untuk booking</small>
+        </div>
+        @endforeach
     </div>
-    @endfor
-    </div>
+
 </section>
 
 @endsection

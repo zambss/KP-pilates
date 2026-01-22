@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\{
     Hero, Event, Package, About, Facility, Coach,
 };
@@ -33,10 +34,22 @@ class DashboardController extends Controller
         return view('dashboardLogin.index');
     }
 
-    public function calendar()
-    {
-        return view('dashboardLogin.calendar');
+public function calendar(Request $request)
+{
+    $currentDate = $request->get('date')
+        ? Carbon::parse($request->get('date'))
+        : Carbon::now();
+
+    $startOfWeek = $currentDate->copy()->startOfWeek(Carbon::SUNDAY);
+
+    $days = collect();
+
+    for ($i = 0; $i < 7; $i++) {
+        $days->push($startOfWeek->copy()->addDays($i));
     }
+
+    return view('dashboardLogin.calendar', compact('days', 'currentDate'));
+}
 
     public function card()
     {

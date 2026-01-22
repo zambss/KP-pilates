@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,9 +51,9 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
         ->name('dashboardLogin.index');
 
     // KALENDER DASHBOARD
-    Route::get('/calendar', function () {
-        return view('dashboardLogin.calendar');
-    })->name('dashboardLogin.calendar');
+Route::get('/calendar', [DashboardController::class, 'calendar'])
+    ->name('dashboardLogin.calendar');
+
 
     // PAGE PILIH JADWAL (KALENDER KHUSUS)
     Route::get('/schedule', function () {
@@ -80,3 +81,19 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     })->name('dashboardLogin.profile');
 
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| LOG OUT
+|--------------------------------------------------------------------------
+*/
+
+Route::post('/logout', function () {
+    Auth::logout();
+
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+
+    return redirect('/'); // balik ke landing page
+})->name('logout');

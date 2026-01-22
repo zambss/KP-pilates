@@ -379,21 +379,6 @@
             </ul>
         </div>
     </div>
-
-    <!-- PROMO (DI LUAR GRID) -->
-    <div class="promo-wrapper">
-        <div class="promo-box">
-            <div class="promo-text">
-                <span class="promo-title">Promo Spesial!</span>
-                <span class="promo-desc">
-                    Beli 5 sesi gratis 1 sesi • Beli 8 sesi gratis 2 sesi
-                </span>
-            </div>
-            <div class="promo-right">
-                <button class="btn-select">Pilih Paket</button>
-            </div>
-        </div>
-    </div>
 </section>
 
 

@@ -1,10 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
+
 class CalendarController extends Controller
 {
-public function index()
+    use Carbon\Carbon;
+
+public function index(Request $request)
 {
-return view('calendar');
+    $currentDate = $request->get('date')
+        ? Carbon::parse($request->get('date'))
+        : Carbon::now();
+
+    $startOfWeek = $currentDate->startOfWeek(Carbon::SUNDAY);
+
+    $days = collect();
+
+    for ($i = 0; $i < 7; $i++) {
+        $days->push($startOfWeek->copy()->addDays($i));
+    }
+
+    return view('calendar.index', compact('days', 'currentDate'));
 }
+
 }

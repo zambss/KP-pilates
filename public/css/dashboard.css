@@ -22,6 +22,7 @@
     background: #F6EACD;
     padding: 28px 22px;
     flex-shrink: 0;
+    height: 100vh;
 }
 
 /* CONTENT */
@@ -60,6 +61,14 @@
 /* HEADER */
 .sidebar-header {
     margin-bottom: 35px;
+}
+
+.sidebar-top {
+    flex: 1;   /* ⬅️ dorong konten ke atas */
+}
+
+.sidebar-bottom {
+    margin-top: auto;  /* ⬅️ PAKSA KE BAWAH */
 }
 
 .back-home {
@@ -123,7 +132,6 @@
     color: #fff;
 }
 
-
 .sidebar-menu li i {
     width: 18px;
     text-align: center;
@@ -146,8 +154,6 @@
 .hamburger {
     display: none;
     position: fixed;
-    top: 20px;
-    left: 20px;
     z-index: 1001;
     background: #B8A378;
     color: #fff;
@@ -314,6 +320,45 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* =========================
+   SIDEBAR LOGOUT
+========================= */
+
+
+.sidebar-logout {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #7b725f;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: transparent;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 12px;
+
+    font-size: 14px;
+    color: #7b725f;
+    cursor: pointer;
+
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(138, 59, 59, 0.12);
+    color: #6b2a2a;
+}
+
 
 /* =========================
    CALENDAR PAGE
@@ -523,7 +568,9 @@ body {
     font-size: 14px;
     color: #7b725f;
 }
-
+/* =========================
+   SCHEDULE TABS
+========================= */
 .schedule-tabs {
     margin-top: 18px;
     display: inline-flex;
@@ -539,6 +586,7 @@ body {
     font-size: 13px;
     cursor: pointer;
     color: #5f553f;
+
 }
 
 .tab-btn.active {
@@ -546,7 +594,10 @@ body {
     color: #fff;
 }
 
-/* CARD */
+
+/* =========================
+   CARD WRAPPER
+========================= */
 .schedule-card {
     background: #EFE2C3;
     border-radius: 24px;
@@ -554,10 +605,14 @@ body {
     margin-top: 30px;
 }
 
-/* TOP */
+
+/* =========================
+   TOP HEADER
+========================= */
 .schedule-top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -565,57 +620,113 @@ body {
     font-size: 18px;
 }
 
-/* GRID */
+
+/* =========================
+   GRID LAYOUT
+========================= */
 .schedule-grid {
     display: grid;
-    grid-template-columns: 80px repeat(6, 1fr);
+    grid-template-columns: 90px repeat(6, 1fr);
     gap: 12px;
 }
 
-.time-col {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+
+/* =========================
+   TIME COLUMN
+========================= */
+.time-cell {
     font-size: 12px;
     color: #7b725f;
-}
-
-.day-col {
     display: flex;
-    flex-direction: column;
-    gap: 14px;
+    align-items: center;
+    justify-content: center;
 }
 
-.day-col strong {
-    font-size: 13px;
-    margin-bottom: 6px;
+
+/* =========================
+   DAY HEADER
+========================= */
+.day-head {
     text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5f553f;
 }
 
-/* CLASS BOX */
+
+/* =========================
+   SLOT CELL
+   🔴 DIUBAH:
+   - Slot hanya container
+   - Tidak dominan visual
+========================= */
+.slot {
+    height: 64px;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: stretch;        /* 🔴 BARU */
+    justify-content: stretch;
+
+    background: transparent;     /* 🔴 DIUBAH */
+    border: 1px dashed rgba(147,123,87,0.25); /* 🔴 DIPERHALUS */
+}
+
+
+/* =========================
+   CLASS BOX (KOTAK UTAMA)
+   🔴 DIUBAH TOTAL
+========================= */
 .class-box {
-    background: rgba(255,255,255,0.35);
-    border: 1px solid #bfae86;
+    width: 100%;                 /* 🔴 BARU */
+    height: 100%;                /* 🔴 BARU */
+
+    display: flex;               /* 🔴 BARU */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255,255,255,0.75); /* 🔴 LEBIH TEGAS */
+    backdrop-filter: blur(6px);          /* 🔴 GLASS */
+
+    border: 1.5px solid #bfae86;          /* 🔴 TEBAL */
     border-radius: 12px;
-    padding: 8px;
+
     font-size: 12px;
     text-align: center;
     cursor: pointer;
-    transition: 0.2s ease;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
 }
 
+
+/* =========================
+   HOVER CLASS
+   🔴 BARU
+========================= */
 .class-box:hover {
-    background: rgba(147,123,87,0.25);
+    background: #ffffff;
+    border-color: #937B57;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
 }
 
-/* LEGEND */
+
+/* =========================
+   LEGEND
+========================= */
 .schedule-legend {
     display: flex;
     justify-content: center;
-    gap: 24px;
-    margin-top: 20px;
+    gap: 14px;
+    margin-top: 15px;
     font-size: 12px;
 }
+
 
 .dot {
     width: 10px;
