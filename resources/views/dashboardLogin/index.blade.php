@@ -17,56 +17,59 @@
 @endauth
 
 
-<!-- STAT -->
+<!-- ================= STAT ================= -->
 <div class="stats-grid">
-    <div class="stat-card">
+    <div class="stat-card stat-success">
         <span>Total Sesi Aktif</span>
         <h2>6</h2>
         <small>Dari 2 Paket</small>
     </div>
 
-    <div class="stat-card">
+    <div class="stat-card stat-warning">
         <span>Kelas Mendatang</span>
         <h2>2</h2>
         <small>Sudah Terjadwal</small>
     </div>
 
-    <div class="stat-card">
+    <div class="stat-card stat-neutral">
         <span>Total Sesi Diikuti</span>
         <h2>7</h2>
         <small>Sesi bulan ini</small>
     </div>
 </div>
 
-<!-- KELAS MENDATANG -->
+
+<!-- ================= KELAS MENDATANG ================= -->
+
 <section class="section">
     <div class="section-header">
         <h3>Kelas Mendatang</h3>
         <a href="#">Lihat Semua</a>
     </div>
 
+    @foreach ($classes as $class)
     <div class="class-card">
         <div>
-            <strong>Reformer Pilates</strong>
-            <p>Coach Jessica Lee</p>
-            <small>10 Jan 2026 · 09:00 - 10:00</small>
+            <strong>{{ $class->title }}</strong>
+            <p>Coach {{ $class->coach }}</p>
+            <small>{{ $class->date }} · {{ $class->time }}</small>
         </div>
-        <span class="badge confirmed">Confirmed</span>
-    </div>
 
-    <div class="class-card">
-        <div>
-            <strong>Mat Pilates</strong>
-            <p>Coach Amanda Wong</p>
-            <small>12 Jan 2026 · 10:30 - 11:30</small>
+        <div class="badges">
+            <span class="badge {{ $class->status }}">
+                {{ ucfirst($class->status) }}
+            </span>
         </div>
-        <span class="badge confirmed">Confirmed</span>
     </div>
+    @endforeach
 </section>
 
-<!-- RIWAYAT TRANSAKSI -->
+
+<!-- ================= RIWAYAT TRANSAKSI ================= -->
 <section class="section">
-    <h3>Riwayat Transaksi</h3>
+    <div class="section-header">
+        <h3>Riwayat Transaksi</h3>
+    </div>
 
     <table class="transaction-table">
         <thead>
@@ -84,14 +87,18 @@
                 <td>Reformer Pilates 8 Sesi</td>
                 <td>5 Jan 2026</td>
                 <td>Rp792.000</td>
-                <td><span class="badge paid">Paid</span></td>
+                <td>
+                    <span class="badge paid">Paid</span>
+                </td>
             </tr>
             <tr>
                 <td>TRX-002</td>
                 <td>Mat Pilates 5 Sesi</td>
                 <td>20 Dec 2025</td>
                 <td>Rp300.000</td>
-                <td><span class="badge paid">Paid</span></td>
+                <td>
+                    <span class="badge paid">Paid</span>
+                </td>
             </tr>
         </tbody>
     </table>

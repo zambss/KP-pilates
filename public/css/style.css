@@ -233,13 +233,13 @@ Landing page dashboard + jadwal
     justify-content: space-between;
     align-items: center;
 
-    padding: 14px 16px;
+    padding: 4px 16px;
 
     background: rgba(0, 0, 0, 0.35); /* gelap transparan */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    border-radius: 18px;
+    border-radius: 15px;
 
     color: #fff;
     text-decoration: none;
@@ -1527,12 +1527,16 @@ navbar menu atas
 }
 .nav-menu li button.btn-login {
     background: transparent;
+    
+    border-radius: 9px;
     border: 1.5px solid #937B57;
-    padding: 8px 16px;
-    border-radius: 999px;
+    padding: 7px 26px;
     font-size: 14px;
     cursor: pointer;
     color: #3A3A3A;
+}
+.btn-login:hover{
+    transform: scale(1.05);
 }
 .nav-menu li {
     display: flex;
@@ -1547,32 +1551,11 @@ navbar menu atas
     font-weight: 600;
 }
 
-.user-dropdown {
-    position: absolute;
-    top: 120%;
-    right: 0;
-    background: #fff;
-    border-radius: 12px;
-    padding: 10px;
-    display: none;
-    min-width: 160px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
 
 .user-menu:hover .user-dropdown {
     display: block;
 }
 
-.user-dropdown a,
-.user-dropdown button {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
 /* HAMBURGER BUTTON */
 .nav-toggle {
     display: none;

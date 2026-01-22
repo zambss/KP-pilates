@@ -5,52 +5,89 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\{
-    Hero, Event, Package, About, Facility, Coach,
+    Hero,
+    Event,
+    Package,
+    About,
+    Facility,
+    Coach
 };
+
 class DashboardController extends Controller
 {
-    public function index()
+    /* =====================
+       PUBLIC HOME (LANDING)
+       → untuk /
+    ====================== */
+    public function home()
     {
         return view('home', [
-            'hero'       => Hero::first(),  
+            'hero'       => Hero::first(),
             'event'      => Event::first(),
             'packages'   => Package::with(['prices', 'benefits'])->get(),
             'about'      => About::first(),
             'facilities' => Facility::all(),
             'coaches'    => Coach::all(),
-            
         ]);
     }
-    public function loin(){
-        return view ('dashboardLogin.index');
-    }
-
 
     /* =====================
-       DASHBOARD (LOGIN)
+       DASHBOARD HOME (LOGIN)
+       → untuk /dashboard
     ====================== */
-    public function dashboard()
+    public function index()
     {
-        return view('dashboardLogin.index');
+        // dummy class booking (sementara)
+        $classes = [
+            (object) [
+                'title'  => 'Reformer Pilates',
+                'coach'  => 'Jessica Lee',
+                'date'   => '10 Jan 2026',
+                'time'   => '09:00 - 10:00',
+                'status' => 'confirmed',
+            ],
+            (object) [
+                'title'  => 'Mat Pilates',
+                'coach'  => 'Amanda Wong',
+                'date'   => '12 Jan 2026',
+                'time'   => '10:30 - 11:30',
+                'status' => 'pending',
+            ],
+        ];
+
+        return view('dashboardLogin.index', compact('classes'));
     }
 
-public function calendar(Request $request)
-{
-    $currentDate = $request->get('date')
-        ? Carbon::parse($request->get('date'))
-        : Carbon::now();
+    /* =====================
+       DASHBOARD CALENDAR
+    ====================== */
+    public function calendar(Request $request)
+    {
+        $currentDate = $request->get('date')
+            ? Carbon::parse($request->get('date'))
+            : Carbon::now();
 
-    $startOfWeek = $currentDate->copy()->startOfWeek(Carbon::SUNDAY);
+        $startOfWeek = $currentDate
+            ->copy()
+            ->startOfWeek(Carbon::SUNDAY);
 
-    $days = collect();
+        $days = collect();
 
-    for ($i = 0; $i < 7; $i++) {
-        $days->push($startOfWeek->copy()->addDays($i));
+        for ($i = 0; $i < 7; $i++) {
+            $days->push(
+                $startOfWeek->copy()->addDays($i)
+            );
+        }
+
+        return view(
+            'dashboardLogin.calendar',
+            compact('days', 'currentDate')
+        );
     }
 
-    return view('dashboardLogin.calendar', compact('days', 'currentDate'));
-}
-
+    /* =====================
+       DASHBOARD SUB PAGE
+    ====================== */
     public function card()
     {
         return view('dashboardLogin.my-card');

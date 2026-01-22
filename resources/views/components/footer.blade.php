@@ -35,14 +35,16 @@
 
         <!-- Contact -->
         <div class="footer-contact">
-            <h3>Contact</h3>
-            <li>Jl. Contoh Alamat No. 12, Semarang</li>
-            <li>info@renspilates.com</li>
-            <li>+62 812-3456-7890</li>
-            <li>hello@renspilates.com</li>
-            <li> Jam Operasional </li>
-            <li>Senin - Jumat: 06:00 - 21:00 </li>
-            <li>Sabtu - Minggu: 07:00 - 19:00 </li>
+            <ul>
+                <h3>Contact</h3>
+                <li>Jl. Contoh Alamat No. 12, Semarang</li>
+                <li>info@renspilates.com</li>
+                <li>+62 812-3456-7890</li>
+                <li>hello@renspilates.com</li>
+                <li> Jam Operasional </li>
+                <li>Senin - Jumat: 06:00 - 21:00 </li>
+                <li>Sabtu - Minggu: 07:00 - 19:00 </li>
+            </ul>
         </div>
 
 

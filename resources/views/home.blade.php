@@ -12,9 +12,7 @@
     <div class="hero-glass">
         <div class="hero-left">
             <span class="hero-subtitle">Premium Pilates Studio</span>
-
             <h1>Transform Your<br>Body & Mind</h1>
-
             <p>
                 Bergabunglah dengan Rens.Pilates dan rasakan perubahan nyata
                 dalam kesehatan dan kebugaran Anda. Kelas premium dengan
@@ -22,7 +20,7 @@
             </p>
 
             <div class="hero-buttons">
-                <a href="#" class="btn-primary" id="openLogin">Join Class Now</a>
+                <button class="btn-primary" id="openLogin">Join Class Now</button>
             </div>
 
             <div class="hero-divider"></div>
@@ -132,7 +130,7 @@
 -- paket dan harga--
 ====================*/ --}}
 
-<section class="pricing-section">
+<section id="paket&harga" class="pricing-section">
     <div class="pricing-header">
         <span class="pricing-subtitle">Paket & Harga</span>
         <h2>Pilih Paket yang Sesuai untuk Anda</h2>
@@ -574,8 +572,8 @@ ABOUT SECTION
         <h2>Siap Memulai Transformasi Anda?</h2>
         <p>Bergabunglah dengan komunitas Rens.Pilates hari ini!</p>
         <div class="cta-actions">
-            <a href="/join-class" class="btn-primary">Join Class Now</a>
-            <a href="/paket-harga" class="btn-outline">Lihat Paket & Harga</a>
+            <a href="#" class="btn-primary" id="openLogin">Join Class Now</a>
+            <a href="#paket&harga" class="btn-outline">Lihat Paket & Harga</a>
         </div>
     </div>
 </section>

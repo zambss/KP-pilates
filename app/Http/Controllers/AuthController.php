@@ -17,21 +17,17 @@ class AuthController extends Controller
 
     // proses login
     public function loginProcess(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
+{
+    if (Auth::attempt($request->only('email', 'password'))) {
+        $request->session()->regenerate();
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->route('dashboardLogin.index');
-        }
-
-        return back()->withErrors([
-            'email' => 'Email atau password salah',
-        ]);
+        // ⛔ TETAP DI LANDING PAGE
+        return redirect()->back();
     }
+
+    return back()->withErrors(['email' => 'Login gagal']);
+}
+
 
     // halaman register
     public function register()

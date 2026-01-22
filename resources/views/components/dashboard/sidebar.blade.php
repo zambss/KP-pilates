@@ -39,13 +39,6 @@
             </a>
         </li>
 
-        <li class="{{ request()->routeIs('dashboardLogin.package') ? 'active' : '' }}">
-            <a href="{{ route('dashboardLogin.package') }}">
-                <i class="fas fa-box"></i>
-                <span>Paket Pilates</span>
-            </a>
-        </li>
-
         <li class="{{ request()->routeIs('dashboardLogin.notifications') ? 'active' : '' }}">
             <a href="{{ route('dashboardLogin.notifications') }}">
                 <i class="fas fa-bell"></i>

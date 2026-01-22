@@ -183,8 +183,8 @@
         display: block;
     }
 }
-/* BASE */
 
+/* BASE */
 body {
     background: #E6D3A9;
     font-family: 'Poppins', sans-serif;
@@ -195,6 +195,10 @@ body {
 }
 
 /* HEADER */
+.dashboard-header {
+    margin-bottom: 32px;
+}
+
 .dashboard-header h1 {
     font-size: 28px;
     font-weight: 600;
@@ -209,31 +213,51 @@ body {
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 24px;
     margin: 30px 0;
 }
 
 .stat-card {
     background: #FFF5DA;
-    border-radius: 24px;
-    padding: 25px;
+    border-radius: 20px;
+    padding: 22px 24px;
+    box-sizing: border-box;
 }
 
 .stat-card span {
-    font-size: 14px;
+    font-size: 13px;
     color: #7b725f;
 }
 
 .stat-card h2 {
     font-size: 32px;
-    margin: 10px 0;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.stat-card small {
+    font-size: 13px;
+    color: #7b725f;
+}
+
+/* state */
+.stat-success {
+    box-shadow: inset 0 0 0 1px #C8B68A;
+}
+
+.stat-warning {
+    box-shadow: inset 0 0 0 1px #D6C199;
+}
+
+.stat-neutral {
+    box-shadow: inset 0 0 0 1px #E0D5B8;
 }
 
 /* SECTION */
 .section {
     background: #FFF5DA;
-    border-radius: 28px;
-    padding: 30px;
+    border-radius: 26px;
+    padding: 28px;
     margin-top: 30px;
 }
 
@@ -241,10 +265,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-header h3 {
+    font-size: 18px;
 }
 
 .section-header a {
-    font-size: 14px;
+    font-size: 13px;
     color: #8b7a55;
     text-decoration: none;
 }
@@ -256,8 +285,8 @@ body {
     align-items: center;
     padding: 18px 22px;
     background: #FAF1D6;
-    border-radius: 20px;
-    margin-top: 15px;
+    border-radius: 18px;
+    margin-top: 14px;
 }
 
 .class-card p {
@@ -267,6 +296,13 @@ body {
 
 .class-card small {
     color: #7b725f;
+    font-size: 13px;
+}
+
+/* badge container */
+.class-card .badges {
+    display: flex;
+    gap: 8px;
 }
 
 /* BADGE */
@@ -275,32 +311,85 @@ body {
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
+    white-space: nowrap;
 }
 
-.badge.confirmed,
-.badge.paid {
-    background: #B8A378;
+.badge.confirmed {
+    background: #8FAE8B;
     color: #fff;
 }
 
-/* TABLE */
+.badge.paid {
+    background: #9FB38A;
+    color: #fff;
+}
+
+.badge.pending {
+    background: #D6B36A;
+    color: #fff;
+}
+/* =====================
+   TRANSACTION TABLE
+===================== */
+
 .transaction-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    table-layout: fixed; /* ⬅️ KUNCI UTAMA */
+    margin-top: 18px;
 }
 
-.transaction-table th {
-    text-align: left;
-    font-size: 13px;
-    color: #7b725f;
-    padding-bottom: 10px;
-}
-
+/* header & cell */
+.transaction-table th,
 .transaction-table td {
     padding: 14px 0;
     font-size: 14px;
+    text-align: left;          /* ⬅️ LEFT ALIGN */
+    vertical-align: middle;    /* ⬅️ SEJAJAR */
 }
+
+/* header style */
+.transaction-table th {
+    font-size: 13px;
+    font-weight: 500;
+    color: #7b725f;
+}
+
+/*  KOLOM transaksi */
+
+.transaction-table th:nth-child(1),
+.transaction-table td:nth-child(1) {
+    width: 18%; /* ID Transaksi */
+}
+
+.transaction-table th:nth-child(2),
+.transaction-table td:nth-child(2) {
+    width: 34%; /* Paket */
+}
+
+.transaction-table th:nth-child(3),
+.transaction-table td:nth-child(3) {
+    width: 18%; /* Tanggal */
+}
+
+/* Kolom Jumlah */
+.transaction-table th:nth-child(4),
+.transaction-table td:nth-child(4) {
+    padding-right: 24px; /* ⬅️ JARAK KE STATUS */
+}
+
+/* Kolom Status */
+.transaction-table th:nth-child(5),
+.transaction-table td:nth-child(5) {
+    padding-left: 24px; /* ⬅️ JARAK DARI JUMLAH */
+}
+
+/* khusus jumlah: rata kanan */
+.transaction-table th:nth-child(4),
+.transaction-table td:nth-child(4) {
+    text-align: right;
+}
+
 
 /* BUTTON */
 .btn-full {
@@ -310,7 +399,7 @@ body {
     color: #fff;
     padding: 14px;
     border-radius: 24px;
-    margin-top: 25px;
+    margin-top: 22px;
     text-decoration: none;
 }
 
@@ -320,6 +409,9 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+
+
 /* =========================
    SIDEBAR LOGOUT
 ========================= */

@@ -22,8 +22,8 @@
             </div>
 
             <div class="profile-info">
-                <h3>Katrina Angelica</h3>
-                <p>Member ID: 123-1-1</p>
+                <h3>{{ session('customer_name') }}</h3>
+                <p>Member ID · {{ session('customer_id') ?? '-' }}</p>
             </div>
         </div>
 
@@ -32,10 +32,10 @@
 
             <div class="form-group">
                 <label>Nama Lengkap</label>
-                <input type="text" value="Katrina Angelica">
+                <input type="text" input : {{ session('customer_name') }}>
             </div>
 
-            <div class="form-group">
+            <div class=" form-group">
                 <label>Email</label>
                 <input type="email" value="katrina@email.com">
             </div>
@@ -46,9 +46,25 @@
             </div>
 
             <div class="form-group">
-                <label>Password</label>
+                <label>Alamat</label>
                 <input type="password" value="********">
             </div>
+
+            <div class="form-group">
+                <label>Catatan kesehatan</label>
+                <input type="password" value="********">
+            </div>
+
+            <div class="form-group">
+                <label>Kontak darurat</label>
+                <input type="password" value="********">
+            </div>
+
+            <div class="form-group">
+                <label>Status</label>
+                <input type="password" value="********">
+            </div>
+
 
         </form>
 

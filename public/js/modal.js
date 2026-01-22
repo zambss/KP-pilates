@@ -54,22 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =======================
-       ROLE SWITCH
-    ======================= */
-    const roleItems = document.querySelectorAll(".role-item");
-
-    roleItems.forEach(item => {
-        item.addEventListener("click", () => {
-            roleItems.forEach(i => i.classList.remove("active"));
-            item.classList.add("active");
-
-            const role = item.dataset.role;
-            localStorage.setItem("selectedRole", role);
-        });
-    });
-
-
 
     /* =======================
        NAVBAR AUTH STATE
