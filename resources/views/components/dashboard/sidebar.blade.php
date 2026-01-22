@@ -6,10 +6,13 @@
         <a href="/" class="back-home">← Kembali ke Beranda</a>
         <p class="member-area">Member Area</p>
 
+        @auth
         <div class="member-card">
-            <strong>Katrina Angelica</strong>
-            <span>123-1-1</span>
+            <strong>{{ auth()->user()->name }}</strong>
+            <span>{{ auth()->user()->member_code ?? auth()->user()->id }}</span>
         </div>
+        @endauth
+
     </div>
 
     {{-- MENU UTAMA --}}

@@ -43,6 +43,9 @@
 .modal-box input:focus::placeholder {
     opacity: 0;
 }
+.judul h3{
+color:#000;
+}
 
 .modal-close {
     position: absolute;
@@ -52,55 +55,6 @@
     background: none;
     font-size: 22px;
     cursor: pointer;
-}
-.role-select {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    font-size: 15px;
-    color: #4A5D52;
-}
-
-.role-item {
-    cursor: pointer;
-    position: relative;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 4px 2px; /* biar area klik lebih manusiawi */
-}
-
-/* hover underline halus */
-.role-item::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background-color: #937B57;
-    transition: width 0.3s ease;
-}
-
-.role-item:hover {
-    color: #2F3E36;
-}
-
-.role-item:hover::after {
-    width: 100%;
-}
-
-/* aktif / terpilih */
-.role-item.active {
-    color: #2F3E36;
-}
-
-.role-item.active::after {
-    width: 100%;
-}
-
-.role-divider {
-    color: #AFA58F;
 }
 
 .btn-google {

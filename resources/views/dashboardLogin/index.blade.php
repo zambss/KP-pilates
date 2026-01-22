@@ -6,10 +6,16 @@
 
 @section('content')
 
+@auth
 <div class="dashboard-header">
-    <h1>Selamat Datang, Katrina!</h1>
-    <p>Member sejak 15 Jan 2026</p>
+    <h1>Selamat Datang, {{ auth()->user()->name }}!</h1>
+    <p>
+        Member sejak
+        {{ auth()->user()->created_at->translatedFormat('d M Y') }}
+    </p>
 </div>
+@endauth
+
 
 <!-- STAT -->
 <div class="stats-grid">

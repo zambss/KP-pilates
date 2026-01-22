@@ -47,7 +47,6 @@
 
                 <!-- GLASS ACTION BAR -->
                 <a href="{{ route('dashboardLogin.calendar') }}" class="card-glass-action">
-
                     <div class="info-text">
                         <span class="category">Weekly Classes</span>
                         <h4>Reformer Pilates</h4>

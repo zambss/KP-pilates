@@ -45,9 +45,12 @@
     <div class="calendar-header">
         <div>
             <h3>Kalender Mingguan</h3>
-            <p>19 Jan – 25 Jan 2026</p>
+            <p>
+                {{ $days->first()->translatedFormat('d M') }}
+                –
+                {{ $days->last()->translatedFormat('d M Y') }}
+            </p>
         </div>
-
         <div class="calendar-nav">
             <button>&larr;</button>
             <button class="today-btn">Hari Ini</button>
