@@ -1,0 +1,112 @@
+
+/* =========================
+   FORMULIR REGISTER
+========================= */
+
+.page-wrapper {
+    padding: 40px;
+    background: #E6D3A9;
+        font-family: 'Poppins', sans-serif;
+}
+
+.page-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.page-header p {
+    color: #7b725f;
+    margin-top: 4px;
+    text-align: center;
+}
+
+.form-card {
+    background: #FFF5DA;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.form-card h3 {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    color: #6f6552;
+    margin-bottom: 4px;
+    padding: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #b9ad95;
+    background: #f8f1df;
+}
+
+.agreement-text {
+    font-size: 13px;
+    color: #6f6552;
+    margin-top: 20px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn-back {
+    background: #b9ad95;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.btn-next {
+    background: #8FAE8B;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+}
+
+/* MODAL */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-box {
+    background: #FFF5DA;
+    padding: 30px;
+    border-radius: 18px;
+    width: 340px;
+    text-align: center;
+}
+
+.modal-actions.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}

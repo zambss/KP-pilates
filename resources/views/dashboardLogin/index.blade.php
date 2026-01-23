@@ -70,7 +70,6 @@
     <div class="section-header">
         <h3>Riwayat Transaksi</h3>
     </div>
-
     <table class="transaction-table">
         <thead>
             <tr>
@@ -81,27 +80,25 @@
                 <th>Status</th>
             </tr>
         </thead>
+
         <tbody>
             <tr>
                 <td>TRX-001</td>
                 <td>Reformer Pilates 8 Sesi</td>
                 <td>5 Jan 2026</td>
                 <td>Rp792.000</td>
-                <td>
-                    <span class="badge paid">Paid</span>
-                </td>
+                <td><span class="badge paid">Paid</span></td>
             </tr>
             <tr>
                 <td>TRX-002</td>
                 <td>Mat Pilates 5 Sesi</td>
                 <td>20 Dec 2025</td>
                 <td>Rp300.000</td>
-                <td>
-                    <span class="badge paid">Paid</span>
-                </td>
+                <td><span class="badge paid">Paid</span></td>
             </tr>
         </tbody>
     </table>
+
 
     <a class="btn-full" href="#">Lihat Semua Transaksi</a>
 </section>

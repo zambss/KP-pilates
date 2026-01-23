@@ -160,3 +160,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+const openBtn = document.getElementById('openConfirm');
+const closeBtn = document.getElementById('closeModal');
+const modal = document.getElementById('confirmModal');
+
+openBtn.addEventListener('click', () => {
+    modal.classList.add('show');
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('show');
+});
+
+
+
+/*REGISTRASI AKUN (POP UP LOGIN) */
+const loginModal = document.getElementById('loginModal');
+const registerModal = document.getElementById('registerModal');
+
+const openRegister = document.getElementById('openRegister');
+const backToLogin = document.getElementById('backToLogin');
+
+const closeLogin = document.getElementById('closeLogin');
+const closeRegister = document.getElementById('closeRegister');
+
+openRegister.addEventListener('click', () => {
+    loginModal.classList.remove('show');
+    registerModal.classList.add('show');
+});
+
+backToLogin.addEventListener('click', () => {
+    registerModal.classList.remove('show');
+    loginModal.classList.add('show');
+});
+
+closeLogin.addEventListener('click', () => {
+    loginModal.classList.remove('show');
+});
+
+closeRegister.addEventListener('click', () => {
+    registerModal.classList.remove('show');
+});

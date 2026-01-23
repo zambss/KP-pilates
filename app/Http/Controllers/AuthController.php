@@ -30,11 +30,10 @@ class AuthController extends Controller
 
 
     // halaman register
-    public function register()
-    {
-        return view('auth.register');
-    }
-
+public function register()
+{
+    return view('register');
+}
     // proses register
     public function registerProcess(Request $request)
     {

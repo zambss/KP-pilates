@@ -252,22 +252,22 @@ Landing page dashboard + jadwal
     background: rgba(0, 0, 0, 0.45);
     transform: translateY(-2px);
 }
-.card-glass-action .category {
+
+    /* GLASS ACTION BAR */
+    .card-glass-action .category {
+    font-size: 10px;
+    line-height: 0.01;
+   }
+
+   .card-glass-action h4 {
+    font-size: 14px;
+    line-height: 0.1;
+   }
+
+   .card-glass-action p {
     font-size: 11px;
-    opacity: 0.8;
-}
-
-.card-glass-action h4 {
-    font-size: 16px;
-    margin: 4px 0;
-    font-weight: 500;
-}
-
-.card-glass-action p {
-    font-size: 12px;
-    opacity: 0.75;
-    margin: 0;
-}
+    line-height: 0.1;
+   }
 .arrow-circle {
     background: #FAF1D6;
     color: #333;
@@ -289,6 +289,14 @@ Landing page dashboard + jadwal
     flex: 0.8;
     display: flex;
     justify-content: flex-end;
+    gap: 12px;
+}
+/* KARTU KANAN */
+.hero-right- {
+    flex: 0.8;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
 }
 
 .class-card {
@@ -451,23 +459,20 @@ Landing page dashboard + jadwal
     }
 
     /* GLASS ACTION BAR */
-    .card-glass-action {
-        padding: 12px 14px;
-        border-radius: 16px;
-    }
-
-    .card-glass-action h4 {
-        font-size: 14px;
-        margin: 2px 0;
-    }
-
-    .card-glass-action p {
-        font-size: 11px;
-    }
-
     .card-glass-action .category {
-        font-size: 10px;
-    }
+    font-size: 10px;
+    line-height: 1.2;
+   }
+
+   .card-glass-action h4 {
+    font-size: 14px;
+    line-height: 1.25;
+   }
+
+   .card-glass-action p {
+    font-size: 11px;
+    line-height: 1.0;
+   }
 
     .arrow-circle {
         width: 32px;
@@ -475,6 +480,7 @@ Landing page dashboard + jadwal
         font-size: 13px;
     }
 }
+
 
 
 

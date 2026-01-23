@@ -80,3 +80,15 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     })->name('dashboardLogin.profile');
 
 });
+// FORMULIR PENDAFTARAN KELAS
+Route::get('/class/{id}/register', function () {
+    return view('schedule.register');
+})->name('class.register');
+
+// KONFIRMASI PENDAFTARAN (HTML PAGE)
+Route::post('/class/confirm', function () {
+    return view('schedule.confirm');
+})->name('class.confirm');
+
+//daftar akun
+Route::get('/register', [AuthController::class, 'register'])->name('register');

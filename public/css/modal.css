@@ -64,7 +64,7 @@
     border: 1px solid #2F3E36;
     color: #2F3E36;
 
-    border-radius: 30px;
+    border-radius:12px;
     font-weight: 500;
     cursor: pointer;
 
@@ -130,5 +130,18 @@
     pointer-events: auto;
     position: relative;
     z-index: 10001;
+}
+
+.register-link {
+    margin-top: 16px;
+    font-size: 13px;
+    text-align: center;
+    color: #6f6552;
+}
+
+.link-action {
+    color: #8FAE8B;
+    cursor: pointer;
+    font-weight: 500;
 }
 

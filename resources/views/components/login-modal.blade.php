@@ -1,9 +1,6 @@
 <!-- LOGIN MODAL -->
 <div class="modal-overlay" id="loginModal">
 
-    <!-- BADGE -->
-    <div class="modal-badge">Rens.Pilates</div>
-
     <!-- MODAL BOX -->
     <div class="modal-box">
 
@@ -24,7 +21,7 @@
 
         <div class="divider">or</div>
 
-        <!-- FORM -->
+        <!-- FORM LOGIN -->
         <form method="POST" action="{{ route('login') }}" novalidate>
             @csrf
 
@@ -49,6 +46,14 @@
                 Login
             </button>
         </form>
+
+        <!-- REGISTER OPTION -->
+        <div class="register-link">
+            Belum punya akun?
+            <a href="{{ url('/register') }}" class="link-action">
+                Daftar di sini
+            </a>
+        </div>
 
     </div>
 </div>

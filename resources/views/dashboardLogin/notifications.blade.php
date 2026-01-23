@@ -50,7 +50,6 @@
                 </p>
 
                 <div class="notif-action">
-                    <span class="badge confirmed">Confirmed</span>
                     <a href="#" class="mark-read">Tandai Dibaca</a>
                     <a href="#" class="danger">Sampah</a>
                 </div>
@@ -73,7 +72,6 @@
                 </p>
 
                 <div class="notif-action">
-                    <span class="badge confirmed">Confirmed</span>
                     <a href="#" class="danger">Sampah</a>
                 </div>
             </div>
@@ -95,7 +93,6 @@
                 </p>
 
                 <div class="notif-action">
-                    <span class="badge confirmed">Confirmed</span>
                     <a href="#" class="mark-read">Tandai Dibaca</a>
                     <a href="#" class="danger">Sampah</a>
                 </div>
@@ -118,7 +115,6 @@
                 </p>
 
                 <div class="notif-action">
-                    <span class="badge confirmed">Confirmed</span>
                     <a href="#" class="danger">Sampah</a>
                 </div>
             </div>
