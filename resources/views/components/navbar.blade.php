@@ -17,24 +17,27 @@
             <li><a href="#coach">Coach</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
-
             {{-- =========================
-               AUTH SECTION (DIPERBAIKI)
-               ========================= --}}
+                 AUTH SECTION (FIXED)
+                 ========================= --}}
+
             @auth
             <li class="user-menu">
-                <button class="user-btn">
-                    <a href="{{ route('dashboardLogin.index') }}" class="btn-login">{{ Auth::user()->name }}</a>
-                </button>
+                <a href="{{ route('dashboardLogin.index') }}" class="btn-login user-link">
+                    {{ Auth::user()->name }}
+                </a>
             </li>
             @else
             <li>
-                <button id="openLogin" class="btn-login">
+                <button type="button" class="btn-login open-login">
                     Login
                 </button>
             </li>
             @endauth
+
         </ul>
 
     </div>
 </nav>
+
+<script src="{{ asset('js/modal.js') }}"></script>

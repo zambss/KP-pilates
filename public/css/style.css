@@ -1285,30 +1285,32 @@ ABOUT SECTION
 
 
 
-
-
-/*=========
-FAQ SECTION
-==========*/
+/* =========================
+   FAQ SECTION
+========================= */
 
 .faq-preview {
-    background-color: #FAF1D6; /* Background luar putih */
+    background-color: #FAF1D6;
     padding: 80px 0;
     font-family: 'Inter', sans-serif;
-    margin-up: -10px;
-}
-.faq-preview .container {
-    background: transparent;
 }
 
 .faq-preview .container {
-    background-color: #FAF1D6;
-}
-.faq-preview .container {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 0 20px;
+    color: #000;
+    text-align: center;
+}
+.faq-preview .container.title {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #000;
+    text-align: center;
 }
 
-
+/* HEADER */
 .faq-header {
     text-align: center;
     margin-bottom: 50px;
@@ -1317,84 +1319,103 @@ FAQ SECTION
 .faq-header p {
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #333;
+    font-size: 13px;
 }
+
 .faq-header h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 10px;
     color: #333;
+    font-size: 22px;
 }
 
+/* LIST */
 .faq-list {
     max-width: 800px;
     margin: 0 auto;
 }
 
+/* ITEM */
 .faq-item {
-    background-color: #B3A27D; /* Warna cokelat muda sesuai gambar */
-    margin-bottom: 20px;
-    border-radius: 12px;
+    background-color: #B3A27D; /* coklat sesuai desain */
+    margin-bottom: 18px;
+    border-radius: 14px;
     overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Animasi Hover */
+/* HOVER */
 .faq-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* QUESTION */
 .faq-question {
     width: 100%;
-    background: none;
+    background: transparent;
     border: none;
-    padding: 25px;
+
+    padding: 22px 24px;
     text-align: left;
-    font-size: 1.1rem;
+
+    font-size: 15px;
     font-weight: 600;
-    color: #333;
+    color: #1f1f1f;
+
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
+/* ANSWER */
 .faq-answer {
-    max-height: 0;
+    background-color: #ffffff; /* PUTIH SOLID */
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    padding: 0 25px;
-    background-color: rgba(255, 255, 255, 0.1); /* Sedikit kontras dalam folder */
+
+    max-height: 0;
+    transition: max-height 0.35s ease;
 }
 
-/* Ketika FAQ Aktif/Diklik */
+.faq-answer p {
+    padding: 18px 24px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ACTIVE */
 .faq-item.active .faq-answer {
-    max-height: 200px; /* Atur sesuai kebutuhan */
-    padding-bottom: 25px;
+    max-height: 300px;
 }
 
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
 @media (max-width: 768px) {
 
     .faq-preview {
         padding: 60px 0;
     }
 
-    .faq-list {
-        padding: 0 20px;
+    .faq-header h2 {
+        font-size: 18px;
+        letter-spacing: 1.5px;
     }
 
     .faq-question {
-        font-size: 15px;
-        padding: 20px;
-    }
-
-    .faq-answer {
+        padding: 18px 18px;
         font-size: 14px;
     }
 
+    .faq-answer p {
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .faq-item {
+        border-radius: 12px;
+    }
 }
 
 /* CTA SECTION */

@@ -57,6 +57,32 @@ class DashboardController extends Controller
 
         return view('dashboardLogin.index', compact('classes'));
     }
+    /* =====================
+       DASHBOARD TRANSAKSI
+       ===================== */
+    public function transactions()
+    {
+    // dummy data sementara (nanti ganti DB)
+    $transactions = [
+        (object) [
+            'code'   => 'TRX-001',
+            'paket'  => 'Reformer Pilates 8 Sesi',
+            'date'   => '5 Jan 2026',
+            'amount' => 'Rp792.000',
+            'status' => 'paid',
+        ],
+        (object) [
+            'code'   => 'TRX-002',
+            'paket'  => 'Mat Pilates 5 Sesi',
+            'date'   => '20 Des 2025',
+            'amount' => 'Rp300.000',
+            'status' => 'paid',
+        ],
+    ];
+
+    return view('dashboardLogin.transactions', compact('transactions'));
+}
+
 
     /* =====================
        DASHBOARD CALENDAR

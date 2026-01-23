@@ -3,22 +3,20 @@
         overflow-x: hidden;
     }
 }
-
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(46, 46, 45, 0.207);
-    backdrop-filter: blur(6px);
-
+    background: rgba(0,0,0,0.55);
     display: none;
-    align-items: center;
     justify-content: center;
-
-    z-index: 10000;
+    align-items: center;
+    z-index: 9999;
+    pointer-events: none;
 }
 
 .modal-overlay.active {
     display: flex;
+    pointer-events: auto;
 }
 
 .modal-box {
@@ -43,10 +41,10 @@
 .modal-box input:focus::placeholder {
     opacity: 0;
 }
-.judul h3{
-color:#000;
+.modal-box h3,
+.modal-box p {
+    color: #2b2b2b; /* hitam soft */
 }
-
 .modal-close {
     position: absolute;
     top: 16px;
@@ -122,7 +120,7 @@ color:#000;
 
 .btn-login {
     width: 100%;
-    padding: 7px 35px;
+    padding: 6px 30px;
     background: #D2C09A;
     color: #FAF1D6;
     border-radius: 10px;

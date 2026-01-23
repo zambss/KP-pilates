@@ -184,6 +184,11 @@
     }
 }
 
+
+/* =========================
+   DASHBOARD
+========================= */
+
 /* BASE */
 body {
     background: #E6D3A9;
@@ -409,48 +414,6 @@ body {
         grid-template-columns: 1fr;
     }
 }
-
-
-
-/* =========================
-   SIDEBAR LOGOUT
-========================= */
-
-
-.sidebar-logout {
-    width: 100%;
-    background: transparent;
-    border: none;
-    color: #7b725f;
-    font-size: 13px;
-    text-align: left;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.logout-btn {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    background: transparent;
-    border: none;
-    padding: 12px 14px;
-    border-radius: 12px;
-
-    font-size: 14px;
-    color: #7b725f;
-    cursor: pointer;
-
-    transition: background 0.25s ease, color 0.25s ease;
-}
-
-.logout-btn:hover {
-    background: rgba(138, 59, 59, 0.12);
-    color: #6b2a2a;
-}
-
 
 /* =========================
    CALENDAR PAGE
@@ -1213,3 +1176,265 @@ body {
         grid-column: span 1;
     }
 }
+
+
+
+
+/* =========================
+   SIDEBAR LOGOUT
+========================= */
+
+
+.sidebar-logout {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #7b725f;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: transparent;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 12px;
+
+    font-size: 14px;
+    color: #7b725f;
+    cursor: pointer;
+
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(138, 59, 59, 0.12);
+    color: #6b2a2a;
+}
+
+.section-divider {
+    width: 225px;
+    height: 1px;
+    background-color: #B3A27D;
+    margin: 0 auto;
+    border-radius: 1px;
+    opacity: 0.5;
+}
+
+/* =========================
+   DASHBOARD HEADER
+========================= */
+.dashboard-header {
+    margin-bottom: 26px;
+}
+
+.dashboard-header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2d2a24;
+}
+
+.dashboard-header p {
+    font-size: 13px;
+    color: #7b725f;
+    margin-top: 4px;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+.dashboard-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 34px;
+}
+
+.summary-card {
+    background: #FBF4DA;
+    border-radius: 16px;
+    padding: 18px 20px;
+}
+
+.summary-card.highlight {
+    border: 2px solid #B3A27D;
+}
+
+.summary-card p {
+    font-size: 13px;
+    color: #7b725f;
+}
+
+.summary-card h2 {
+    font-size: 26px;
+    margin: 6px 0;
+    color: #2d2a24;
+}
+
+.summary-card span {
+    font-size: 12px;
+    color: #9a9077;
+}
+
+/* =========================
+   SECTION CARD
+========================= */
+.dashboard-section {
+    background: #FBF4DA;
+    border-radius: 22px;
+    padding: 24px 26px;
+    margin-bottom: 30px;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d2a24;
+}
+
+.section-header p {
+    font-size: 13px;
+    color: #7b725f;
+}
+
+/* =========================
+   UPCOMING CLASS
+========================= */
+.upcoming-wrapper {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.calendar-icon {
+    width: 64px;
+    height: 64px;
+    background: #F3E6BF;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.class-card-horizontal {
+    flex: 1;
+    background: #FAF1D6;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e2d3a6;
+}
+
+.class-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.class-info p {
+    font-size: 12px;
+    color: #7b725f;
+}
+
+.class-meta {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+    color: #7b725f;
+    margin-top: 6px;
+}
+
+.class-status {
+    background: #B3A27D;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 12px;
+}
+
+/* =========================
+   TRANSACTION
+========================= */
+.transaction-table {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.transaction-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 110px 120px 100px;
+    background: #FAF1D6;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    align-items: center;
+}
+
+.transaction-row.head {
+    background: transparent;
+    font-weight: 600;
+    color: #7b725f;
+}
+
+.status.paid {
+    background: #B3A27D;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 14px;
+    font-size: 12px;
+    width: fit-content;
+}
+
+/* =========================
+   VIEW ALL BUTTON
+========================= */
+.btn-view-all {
+    margin-top: 12px;
+    background: #B3A27D;
+    border: none;
+    padding: 12px;
+    border-radius: 14px;
+    font-size: 13px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-view-all:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+
+    .dashboard-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .upcoming-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .transaction-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+}
+

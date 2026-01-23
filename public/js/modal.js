@@ -1,128 +1,162 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ================
-    efek scroll smooth
-    ==================*/
+    /* =========================
+       SMOOTH SCROLL (ANCHOR)
+    ========================= */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function () {
+        anchor.addEventListener("click", e => {
+            const targetId = anchor.getAttribute("href");
+            const targetEl = document.querySelector(targetId);
 
-        const targetId = this.getAttribute("href");
-        const targetEl = document.querySelector(targetId);
+            if (!targetEl) return;
 
-        const offset = 80; // tinggi navbar
-        const elementPosition = targetEl.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
+            e.preventDefault();
 
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
+            const offset = 80; // tinggi navbar
+            const position = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: position,
+                behavior: "smooth"
+            });
         });
     });
-});
 
-    /* =======================
-       MODAL LOGIN
-    ======================= */
-    const openBtn  = document.getElementById("openLogin");
-    const modal    = document.getElementById("loginModal");
-    const closeBtn = document.getElementById("closeLogin");
 
-    if (openBtn && modal) {
-        openBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            modal.classList.add("active");
+    /* =========================
+       LOGIN MODAL
+    ========================= */
+    const modal     = document.getElementById("loginModal");
+    const closeBtn  = document.getElementById("closeLogin");
+    const openBtns  = document.querySelectorAll(".open-login, #openLogin");
+
+    if (modal) {
+
+        // OPEN MODAL
+        openBtns.forEach(btn => {
+            btn.addEventListener("click", e => {
+                e.preventDefault();
+                modal.classList.add("active");
+            });
         });
-    }
 
-    if (closeBtn && modal) {
-        closeBtn.addEventListener("click", () => {
-            modal.classList.remove("active");
-        });
-    }
-
-
-    /* =======================
-       TOGGLE PASSWORD
-    ======================= */
-    const toggle = document.getElementById("togglePassword");
-    const pass   = document.getElementById("password");
-
-    if (toggle && pass) {
-        toggle.addEventListener("click", () => {
-            pass.type = pass.type === "password" ? "text" : "password";
-        });
-    }
-
-
-
-    /* =======================
-       NAVBAR AUTH STATE
-    ======================= */
-    const isLogin  = localStorage.getItem("isLogin");
-    const username = localStorage.getItem("username");
-    const navAuth  = document.getElementById("navAuth");
-
-    if (isLogin && username && navAuth) {
-        navAuth.innerHTML = `
-            <div class="user-name">
-                Hi, ${username}
-            </div>
-        `;
-    }
-
-
-    /*=================
-    SIDE BAR LOGIC
-    ===================*/
-    function toggleSidebar() {
-        document.querySelector('.sidebar').classList.toggle('active');
-    }
-});
-    /*=================
-    Nav BAR HAM
-    ===================*/
-    document.addEventListener('DOMContentLoaded', () => {
-        const navToggle = document.getElementById('navToggle');
-        const navMenu   = document.getElementById('navMenu');
-
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
+        // CLOSE VIA BUTTON
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                modal.classList.remove("active");
             });
         }
+
+        // CLOSE VIA BACKDROP
+        modal.addEventListener("click", e => {
+            if (e.target === modal) {
+                modal.classList.remove("active");
+            }
+        });
+
+        // CLOSE VIA ESC
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") {
+                modal.classList.remove("active");
+            }
+        });
+    }
+
+
+    /* =========================
+       TOGGLE PASSWORD
+    ========================= */
+    const togglePass = document.getElementById("togglePassword");
+    const passInput = document.getElementById("password");
+
+    if (togglePass && passInput) {
+        togglePass.addEventListener("click", () => {
+            passInput.type = passInput.type === "password" ? "text" : "password";
+        });
+    }
+
+
+    /* =========================
+       NAVBAR HAMBURGER (MOBILE)
+    ========================= */
+    const navToggle = document.getElementById("navToggle");
+    const navMenu   = document.getElementById("navMenu");
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    }
+
+
+    /* =========================
+       PRICE OPTION SELECT
+    ========================= */
+    document.querySelectorAll(".price-option").forEach(button => {
+        button.addEventListener("click", () => {
+            const list = button.closest(".price-list");
+            if (!list) return;
+
+            list.querySelectorAll(".price-option")
+                .forEach(btn => btn.classList.remove("active"));
+
+            button.classList.add("active");
+
+            const sesi  = button.dataset.sesi;
+            const harga = button.dataset.harga;
+
+            console.log("Pilih paket:", sesi, harga);
+        });
     });
 
-    /*=================
-    Paket harga
-    ===================*/
-    document.querySelectorAll('.price-list li').forEach(item => {
-    item.addEventListener('click', () => {
-        item
-          .closest('.price-list')
-          .querySelectorAll('li')
-          .forEach(li => li.classList.remove('active'));
 
-        item.classList.add('active');
+    /* =========================
+       FAQ ACCORDION
+    ========================= */
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+        if (!question) return;
+
+        question.addEventListener("click", () => {
+            faqItems.forEach(other => {
+                if (other !== item) {
+                    other.classList.remove("active");
+                }
+            });
+
+            item.classList.toggle("active");
+        });
     });
+
+    /* =========================
+       FILTER NOTIFIKASI
+       ========================= */
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const notifications = document.querySelectorAll(".notification-item");
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            // aktifkan tombol
+            filterButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filter = btn.dataset.filter;
+
+            notifications.forEach(item => {
+                if (filter === "all") {
+                    item.style.display = "flex";
+                }
+
+                if (filter === "unread") {
+                    item.style.display = item.classList.contains("unread")
+                        ? "flex"
+                        : "none";
+                }
+            });
+        });
+    });
+
 });
-document.querySelectorAll('.price-option').forEach(button => {
-    button.addEventListener('click', () => {
-
-        // reset active di card ini saja
-        const list = button.closest('.price-list');
-        list.querySelectorAll('.price-option')
-            .forEach(btn => btn.classList.remove('active'));
-
-        button.classList.add('active');
-
-        // ambil data untuk modal (nanti)
-        const sesi  = button.dataset.sesi;
-        const harga = button.dataset.harga;
-
-        console.log('Pilih paket:', sesi, harga);
-
-        // TODO:
-        // openPaymentModal(sesi, harga);
-    });
-});
-

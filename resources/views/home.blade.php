@@ -20,7 +20,9 @@
             </p>
 
             <div class="hero-buttons">
-                <button class="btn-primary" id="openLogin">Join Class Now</button>
+                <button type="button" class="btn-primary js-open-login">
+                    Join Class Now
+                </button>
             </div>
 
             <div class="hero-divider"></div>
@@ -523,45 +525,83 @@ ABOUT SECTION
     <div class="section-divider"></div>
 </div>
 
-{{-- FAQ --}}
-<section id="faq" class=" faq-preview">
+
+
+{{-- ===================
+FAQ SECTION
+===================== --}}
+<section id="faq" class="faq-preview">
     <div class="container">
-        <div class="faq-header">
-            <p>FAQ</p>
-            <h2>Pertanyaan yang Sering Diajukan</h2>
-        </div>
+        <p class="faq-titlee">FAQ</p>
+        <h2 class="faq-title">PERTANYAAN YANG SERING DIAJUKAN</h2>
 
         <div class="faq-list">
-            @php
-            $faqs = [
-            ['q' => 'Apakah saya perlu pengalaman sebelumnya untuk join kelas?', 'a' => 'Tidak perlu! Kami menyediakan
-            kelas untuk semua level, dari pemula hingga advanced. Instruktur kami akan membantu Anda menyesuaikan
-            gerakan dengan kemampuan Anda.'],
-            ['q' => 'Berapa lama masa berlaku card/paket yang saya beli?', 'a' => 'Card aktif 3 bulan sejak card pertama
-            digunakan. Jika belum digunakan, card tidak akan hangus.'],
-            ['q' => 'Apakah saya bisa reschedule kelas yang sudah dibooking?', 'a' => 'Ya, Anda bisa reschedule maksimal
-            12 jam sebelum kelas dimulai melalui dashboard member.'],
-            ['q' => 'Bagaimana jika saya tidak bisa hadir ke kelas yang sudah dibooking?', 'a' => 'Silakan cancel atau
-            reschedule minimal 12 jam sebelum kelas. Jika tidak, card Anda tetap akan terpotong.'],
-            ['q' => 'Apakah ada promo untuk member baru?', 'a' => 'Ya! Kami memiliki berbagai promo menarik seperti beli
-            5 sesi gratis 1 sesi, dan program referral.'],
-            ];
-            @endphp
 
-            @foreach ($faqs as $faq)
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>{{ $faq['q'] }}</span>
-                    <i class="chevron-icon"></i>
+                <button class="faq-question" type="button">
+                    Apakah saya perlu pengalaman sebelumnya untuk join kelas?
                 </button>
                 <div class="faq-answer">
-                    <p>{{ $faq['a'] }}</p>
+                    <p>
+                        Tidak perlu. Kami menyediakan kelas untuk semua level, dari pemula hingga advanced.
+                        Instruktur kami akan membantu menyesuaikan gerakan dengan kemampuan Anda.
+                    </p>
                 </div>
             </div>
-            @endforeach
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    Berapa lama masa berlaku card atau paket yang saya beli?
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Card berlaku selama 3 bulan sejak sesi pertama digunakan. Jika belum digunakan,
+                        card tidak akan hangus.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    Apakah saya bisa reschedule kelas yang sudah dibooking?
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Bisa. Anda dapat melakukan reschedule maksimal 12 jam sebelum kelas dimulai
+                        melalui dashboard member.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    Bagaimana jika saya tidak bisa hadir ke kelas yang sudah dibooking?
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Silakan cancel atau reschedule minimal 12 jam sebelum kelas.
+                        Jika tidak, sesi tetap akan terpotong.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    Apakah ada promo untuk member baru?
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Ya. Kami menyediakan promo khusus untuk member baru,
+                        termasuk bonus sesi dan program referral.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
+
+
 
 <div class="section-bawah">
 </div>
@@ -572,7 +612,9 @@ ABOUT SECTION
         <h2>Siap Memulai Transformasi Anda?</h2>
         <p>Bergabunglah dengan komunitas Rens.Pilates hari ini!</p>
         <div class="cta-actions">
-            <a href="#" class="btn-primary" id="openLogin">Join Class Now</a>
+            <a href="#" class="btn-primary js-open-login">
+                Join Class Now
+            </a>
             <a href="#paket&harga" class="btn-outline">Lihat Paket & Harga</a>
         </div>
     </div>

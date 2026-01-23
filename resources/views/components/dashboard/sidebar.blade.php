@@ -2,6 +2,7 @@
 
 <aside class="sidebar">
 
+    {{-- HEADER --}}
     <div class="sidebar-header">
         <a href="/" class="back-home">← Kembali ke Beranda</a>
         <p class="member-area">Member Area</p>
@@ -12,10 +13,9 @@
             <span>{{ auth()->user()->member_code ?? auth()->user()->id }}</span>
         </div>
         @endauth
-
     </div>
 
-    {{-- MENU UTAMA --}}
+    {{-- MENU --}}
     <ul class="sidebar-menu">
 
         <li class="{{ request()->routeIs('dashboardLogin.index') ? 'active' : '' }}">
@@ -25,9 +25,17 @@
             </a>
         </li>
 
+        {{-- ✅ MENU BARU: TRANSAKSI --}}
+        <li class="{{ request()->routeIs('dashboardLogin.transaksi') ? 'active' : '' }}">
+            <a href="{{ route('dashboardLogin.transaksi') }}">
+                <i class="fas fa-receipt"></i>
+                <span>Transaksi</span>
+            </a>
+        </li>
+
         <li class="{{ request()->routeIs('dashboardLogin.calendar') ? 'active' : '' }}">
             <a href="{{ route('dashboardLogin.calendar') }}">
-                <i class="fas fa-calendar"></i>
+                <i class="fas fa-calendar-alt"></i>
                 <span>Kalender Kelas</span>
             </a>
         </li>
@@ -54,8 +62,8 @@
         </li>
 
     </ul>
-
-    {{-- LOGOUT (POJOK BAWAH) --}}
+    <div class="section-divider"></div>
+    {{-- LOGOUT --}}
     <div class="sidebar-logout">
         <form action="{{ route('logout') }}" method="POST">
             @csrf

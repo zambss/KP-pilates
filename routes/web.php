@@ -44,6 +44,11 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     // ✅ DASHBOARD HOME (BENAR)
     Route::get('/', [DashboardController::class, 'index'])
         ->name('dashboardLogin.index');
+        
+    Route::get('/dashboard/transactions', function () {
+        return view('dashboardLogin.transaksi');
+    })->name('dashboardLogin.transaksi');
+
 
     // KALENDER
     Route::get('/calendar', [DashboardController::class, 'calendar'])
