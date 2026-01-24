@@ -12,8 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             e.preventDefault();
 
-            const offset = 80; // tinggi navbar
-            const position = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+            const offset = 80;
+            const position =
+                targetEl.getBoundingClientRect().top +
+                window.pageYOffset -
+                offset;
 
             window.scrollTo({
                 top: position,
@@ -22,46 +25,79 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-
     /* =========================
-       LOGIN MODAL
+       LOGIN MODAL (SUDAH JALAN)
     ========================= */
-    const modal     = document.getElementById("loginModal");
-    const closeBtn  = document.getElementById("closeLogin");
-    const openBtns  = document.querySelectorAll(".open-login, #openLogin");
+    const loginModal = document.getElementById("loginModal");
+    const closeLogin = document.getElementById("closeLogin");
+    const openLoginBtns = document.querySelectorAll(".open-login, #openLogin");
 
-    if (modal) {
-
-        // OPEN MODAL
-        openBtns.forEach(btn => {
+    if (loginModal) {
+        openLoginBtns.forEach(btn => {
             btn.addEventListener("click", e => {
                 e.preventDefault();
-                modal.classList.add("active");
+                loginModal.classList.add("active");
             });
         });
 
-        // CLOSE VIA BUTTON
-        if (closeBtn) {
-            closeBtn.addEventListener("click", () => {
-                modal.classList.remove("active");
+        if (closeLogin) {
+            closeLogin.addEventListener("click", () => {
+                loginModal.classList.remove("active");
             });
         }
 
-        // CLOSE VIA BACKDROP
-        modal.addEventListener("click", e => {
-            if (e.target === modal) {
-                modal.classList.remove("active");
+        loginModal.addEventListener("click", e => {
+            if (e.target === loginModal) {
+                loginModal.classList.remove("active");
             }
         });
 
-        // CLOSE VIA ESC
         document.addEventListener("keydown", e => {
             if (e.key === "Escape") {
-                modal.classList.remove("active");
+                loginModal.classList.remove("active");
             }
         });
     }
 
+    /* =========================
+       REGISTER MODAL (FIXED)
+    ========================= */
+    const registerModal = document.getElementById("registerModal");
+    const openRegister = document.getElementById("openRegister");
+    const backToLogin = document.getElementById("backToLogin");
+    const closeRegister = document.getElementById("closeRegister");
+
+    // dari login → register
+    if (openRegister && registerModal && loginModal) {
+        openRegister.addEventListener("click", () => {
+            loginModal.classList.remove("active");
+            registerModal.classList.add("active");
+        });
+    }
+
+    // dari register → login
+    if (backToLogin && registerModal && loginModal) {
+        backToLogin.addEventListener("click", () => {
+            registerModal.classList.remove("active");
+            loginModal.classList.add("active");
+        });
+    }
+
+    // close register
+    if (closeRegister && registerModal) {
+        closeRegister.addEventListener("click", () => {
+            registerModal.classList.remove("active");
+        });
+    }
+
+    // close register via backdrop
+    if (registerModal) {
+        registerModal.addEventListener("click", e => {
+            if (e.target === registerModal) {
+                registerModal.classList.remove("active");
+            }
+        });
+    }
 
     /* =========================
        TOGGLE PASSWORD
@@ -71,23 +107,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (togglePass && passInput) {
         togglePass.addEventListener("click", () => {
-            passInput.type = passInput.type === "password" ? "text" : "password";
+            passInput.type =
+                passInput.type === "password" ? "text" : "password";
         });
     }
 
-
     /* =========================
-       NAVBAR HAMBURGER (MOBILE)
+       NAVBAR HAMBURGER
     ========================= */
     const navToggle = document.getElementById("navToggle");
-    const navMenu   = document.getElementById("navMenu");
+    const navMenu = document.getElementById("navMenu");
 
     if (navToggle && navMenu) {
         navToggle.addEventListener("click", () => {
             navMenu.classList.toggle("active");
         });
     }
-
 
     /* =========================
        PRICE OPTION SELECT
@@ -97,34 +132,29 @@ document.addEventListener("DOMContentLoaded", () => {
             const list = button.closest(".price-list");
             if (!list) return;
 
-            list.querySelectorAll(".price-option")
+            list
+                .querySelectorAll(".price-option")
                 .forEach(btn => btn.classList.remove("active"));
 
             button.classList.add("active");
 
-            const sesi  = button.dataset.sesi;
-            const harga = button.dataset.harga;
-
-            console.log("Pilih paket:", sesi, harga);
+            console.log("Pilih paket:", button.dataset.sesi, button.dataset.harga);
         });
     });
-
 
     /* =========================
        FAQ ACCORDION
     ========================= */
-    const faqItems = document.querySelectorAll(".faq-item");
-
-    faqItems.forEach(item => {
+    document.querySelectorAll(".faq-item").forEach(item => {
         const question = item.querySelector(".faq-question");
         if (!question) return;
 
         question.addEventListener("click", () => {
-            faqItems.forEach(other => {
-                if (other !== item) {
-                    other.classList.remove("active");
-                }
-            });
+            document
+                .querySelectorAll(".faq-item")
+                .forEach(other => {
+                    if (other !== item) other.classList.remove("active");
+                });
 
             item.classList.toggle("active");
         });
@@ -132,24 +162,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================
        FILTER NOTIFIKASI
-       ========================= */
+    ========================= */
     const filterButtons = document.querySelectorAll(".filter-btn");
     const notifications = document.querySelectorAll(".notification-item");
 
     filterButtons.forEach(btn => {
         btn.addEventListener("click", () => {
-
-            // aktifkan tombol
             filterButtons.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
 
             const filter = btn.dataset.filter;
 
             notifications.forEach(item => {
-                if (filter === "all") {
-                    item.style.display = "flex";
-                }
-
+                if (filter === "all") item.style.display = "flex";
                 if (filter === "unread") {
                     item.style.display = item.classList.contains("unread")
                         ? "flex"
@@ -159,45 +184,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-});
-const openBtn = document.getElementById('openConfirm');
-const closeBtn = document.getElementById('closeModal');
-const modal = document.getElementById('confirmModal');
+    document.querySelectorAll('.price-option').forEach(button => {
+    button.addEventListener('click', () => {
+        const card  = button.closest('.pricing-card');
 
-openBtn.addEventListener('click', () => {
-    modal.classList.add('show');
-});
+        const paket = card.dataset.paket;
+        const sesi  = button.dataset.sesi;
+        const harga = button.dataset.harga;
 
-closeBtn.addEventListener('click', () => {
-    modal.classList.remove('show');
-});
-
-
-
-/*REGISTRASI AKUN (POP UP LOGIN) */
-const loginModal = document.getElementById('loginModal');
-const registerModal = document.getElementById('registerModal');
-
-const openRegister = document.getElementById('openRegister');
-const backToLogin = document.getElementById('backToLogin');
-
-const closeLogin = document.getElementById('closeLogin');
-const closeRegister = document.getElementById('closeRegister');
-
-openRegister.addEventListener('click', () => {
-    loginModal.classList.remove('show');
-    registerModal.classList.add('show');
+        // redirect ke form booking
+        window.location.href =
+            `/booking/form?paket=${encodeURIComponent(paket)}&sesi=${sesi}&harga=${harga}`;
+    });
 });
 
-backToLogin.addEventListener('click', () => {
-    registerModal.classList.remove('show');
-    loginModal.classList.add('show');
-});
-
-closeLogin.addEventListener('click', () => {
-    loginModal.classList.remove('show');
-});
-
-closeRegister.addEventListener('click', () => {
-    registerModal.classList.remove('show');
 });

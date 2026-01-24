@@ -5,4 +5,5 @@ use Illuminate\Http\Request;
 abstract class Controller
 {
     //
+    
 }

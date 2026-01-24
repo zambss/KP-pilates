@@ -1,112 +1,134 @@
-
 /* =========================
-   FORMULIR REGISTER
+   REGISTER MODAL
 ========================= */
 
-.page-wrapper {
-    padding: 40px;
-    background: #E6D3A9;
-        font-family: 'Poppins', sans-serif;
+.register-box {
+    width: 360px;
+    background: rgba(255, 245, 218, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 16px 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.15);
+    position: relative;
+    animation: scaleIn .25s ease;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
 }
 
-.page-header h2 {
-    font-size: 22px;
+
+@keyframes scaleIn {
+    from {
+        transform: scale(.96);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* CLOSE */
+.modal-close {
+    position: absolute;
+    top: 1px;
+    right: 18px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* LOGO */
+.modal-logo {
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.logo-icon {
+    display: inline-block;
+    background: #8FAE8B;
+    color: #333;
+    padding: 8px 10px;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
+.logo-icon h4{
+    color: #333;
+}
+
+.modal-logo h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+
+/* TITLE */
+.modal-title {
+    font-size: 18px;
     font-weight: 600;
     text-align: center;
 }
 
-.page-header p {
+.modal-subtitle {
+    font-size: 12px;
+    text-align: center;
     color: #7b725f;
-    margin-top: 4px;
-    text-align: center;
+    margin-bottom: -2px;
 }
 
-.form-card {
-    background: #FFF5DA;
-    border-radius: 20px;
-    padding: 30px;
-    margin-top: 20px;
-}
-
-.form-card h3 {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 14px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 13px;
-    color: #6f6552;
-    margin-bottom: 4px;
-    padding: 5px;
-}
-
-.form-group input {
+/* INPUT */
+.register-box input {
     width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #b9ad95;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #d2c5a3;
     background: #f8f1df;
-}
-
-.agreement-text {
     font-size: 13px;
-    color: #6f6552;
-    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.form-actions {
+/* PHONE */
+.phone-group {
     display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
+    gap: 6px;
+    margin-bottom: 10px;
 }
 
-.btn-back {
-    background: #b9ad95;
-    color: #000;
-    padding: 12px 20px;
-    border-radius: 12px;
-    text-decoration: none;
+.phone-group span {
+    padding: 10px 12px;
+    background: #f1e8cf;
+    border-radius: 10px;
+    font-size: 13px;
 }
 
-.btn-next {
-    background: #8FAE8B;
+/* BUTTON */
+.btn-primary {
+    width: 100%;
+    background: #9a8f62;
     color: #fff;
-    padding: 12px 20px;
-    border-radius: 12px;
     border: none;
+    padding: 12px;
+    border-radius: 14px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-/* MODAL */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.4);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-overlay.show {
-    display: flex;
-}
-
-.modal-box {
-    background: #FFF5DA;
-    padding: 30px;
-    border-radius: 18px;
-    width: 340px;
+/* FOOTER */
+.modal-footer {
+    margin-top: 1px;
+    font-size: 12px;
     text-align: center;
+    color: #6f6552;
 }
 
-.modal-actions.vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 20px;
+.link-action {
+    color: #8FAE8B;
+    cursor: pointer;
+    font-weight: 500;
 }

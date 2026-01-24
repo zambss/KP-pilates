@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('content')
 @include('components.login-modal')
+@include('components.register-modal')
+
 <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
 <script src="{{ asset('js/modal.js') }}"></script>
 

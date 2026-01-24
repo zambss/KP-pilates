@@ -50,9 +50,9 @@
         <!-- REGISTER OPTION -->
         <div class="register-link">
             Belum punya akun?
-            <a href="{{ url('/register') }}" class="link-action">
+            <span id="openRegister" class="link-action">
                 Daftar di sini
-            </a>
+            </span>
         </div>
 
     </div>

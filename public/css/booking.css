@@ -1,0 +1,213 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   BOOKING PAGE WRAPPER
+========================= */
+.booking-page {
+    background: #f1ddad; /* sesuai request F1D** */
+    min-height: 100vh;
+    padding: 24px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.booking-wrapper {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.booking-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.back-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+}
+
+.booking-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.booking-title h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* =========================
+   STEP INDICATOR
+========================= */
+.booking-steps {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.step {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #d8d0b8;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+}
+
+.step.active {
+    background: #8FAE8B;
+    color: #fff;
+}
+
+.step-line {
+    width: 24px;
+    height: 2px;
+    background: #d8d0b8;
+}
+
+/* =========================
+   MAIN BOX
+========================= */
+.booking-box {
+    background: #fdf6e3;
+    border-radius: 20px;
+    padding: 18px;
+}
+
+/* =========================
+   SUMMARY CARD
+========================= */
+.summary-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 18px;
+}
+
+.summary-date {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.summary-route {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.route-arrow {
+    font-size: 16px;
+    opacity: 0.6;
+}
+
+.summary-meta {
+    font-size: 12px;
+    color: #666;
+}
+
+/* =========================
+   FORM SECTION
+========================= */
+.form-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 18px;
+}
+
+.form-section h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* =========================
+   FORM GROUP
+========================= */
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    color: #6f6552;
+    margin-bottom: 4px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    background: #fafafa;
+}
+
+/* =========================
+   AGREEMENT
+========================= */
+.agreement-section {
+    background: #fff;
+}
+
+.agreement-box {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.agreement-box p {
+    margin-bottom: 10px;
+}
+
+.agreement-box ul {
+    padding-left: 18px;
+    margin: 10px 0;
+}
+
+.agreement-box li {
+    margin-bottom: 6px;
+}
+
+/* =========================
+   ACTION BUTTON
+========================= */
+.booking-action {
+    margin-top: 20px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: #2f6fed;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+

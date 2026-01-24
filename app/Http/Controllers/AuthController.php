@@ -30,27 +30,26 @@ class AuthController extends Controller
 
 
     // halaman register
-public function register()
-{
-    return view('register');
-}
-    // proses register
     public function registerProcess(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6'
-        ]);
+{
+    // validasi singkat
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:6'
+    ]);
 
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
-        ]);
+    User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => bcrypt($request->password),
+    ]);
 
-        return redirect('/login')->with('success', 'Register berhasil');
-    }
+    auth()->attempt($request->only('email', 'password'));
+
+    return redirect()->back();
+}
+
 
     // logout
     public function logout(Request $request)
