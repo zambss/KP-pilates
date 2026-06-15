@@ -1,128 +1,245 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ================
-    efek scroll smooth
-    ==================*/
+    /* =====================================================
+       SMOOTH SCROLL (ANCHOR)
+    ===================================================== */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function () {
+        anchor.addEventListener("click", e => {
+            const targetId = anchor.getAttribute("href");
+            const targetEl = document.querySelector(targetId);
+            if (!targetEl) return;
 
-        const targetId = this.getAttribute("href");
-        const targetEl = document.querySelector(targetId);
-
-        const offset = 80; // tinggi navbar
-        const elementPosition = targetEl.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
-    });
-});
-
-    /* =======================
-       MODAL LOGIN
-    ======================= */
-    const openBtn  = document.getElementById("openLogin");
-    const modal    = document.getElementById("loginModal");
-    const closeBtn = document.getElementById("closeLogin");
-
-    if (openBtn && modal) {
-        openBtn.addEventListener("click", (e) => {
             e.preventDefault();
-            modal.classList.add("active");
+            const offset = 80;
+            const position =
+                targetEl.getBoundingClientRect().top +
+                window.pageYOffset -
+                offset;
+
+            window.scrollTo({ top: position, behavior: "smooth" });
         });
-    }
+    });
 
-    if (closeBtn && modal) {
-        closeBtn.addEventListener("click", () => {
-            modal.classList.remove("active");
-        });
-    }
+    /* =====================================================
+       LOGIN MODAL
+    ===================================================== */
+    const loginModal = document.getElementById("loginModal");
+    const closeLogin = document.getElementById("closeLogin");
+    const openLoginBtns = document.querySelectorAll(".open-login, #openLogin");
 
-
-    /* =======================
-       TOGGLE PASSWORD
-    ======================= */
-    const toggle = document.getElementById("togglePassword");
-    const pass   = document.getElementById("password");
-
-    if (toggle && pass) {
-        toggle.addEventListener("click", () => {
-            pass.type = pass.type === "password" ? "text" : "password";
-        });
-    }
-
-
-
-    /* =======================
-       NAVBAR AUTH STATE
-    ======================= */
-    const isLogin  = localStorage.getItem("isLogin");
-    const username = localStorage.getItem("username");
-    const navAuth  = document.getElementById("navAuth");
-
-    if (isLogin && username && navAuth) {
-        navAuth.innerHTML = `
-            <div class="user-name">
-                Hi, ${username}
-            </div>
-        `;
-    }
-
-
-    /*=================
-    SIDE BAR LOGIC
-    ===================*/
-    function toggleSidebar() {
-        document.querySelector('.sidebar').classList.toggle('active');
-    }
-});
-    /*=================
-    Nav BAR HAM
-    ===================*/
-    document.addEventListener('DOMContentLoaded', () => {
-        const navToggle = document.getElementById('navToggle');
-        const navMenu   = document.getElementById('navMenu');
-
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
+    if (loginModal) {
+        openLoginBtns.forEach(btn => {
+            btn.addEventListener("click", e => {
+                e.preventDefault();
+                loginModal.classList.add("active");
             });
-        }
+        });
+
+        closeLogin?.addEventListener("click", () => {
+            loginModal.classList.remove("active");
+        });
+
+        loginModal.addEventListener("click", e => {
+            if (e.target === loginModal) loginModal.classList.remove("active");
+        });
+
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") loginModal.classList.remove("active");
+        });
+    }
+
+    /* =====================================================
+       REGISTER MODAL
+    ===================================================== */
+    const registerModal = document.getElementById("registerModal");
+    const openRegister  = document.getElementById("openRegister");
+    const backToLogin   = document.getElementById("backToLogin");
+    const closeRegister = document.getElementById("closeRegister");
+
+    openRegister?.addEventListener("click", () => {
+        loginModal?.classList.remove("active");
+        registerModal?.classList.add("active");
     });
 
-    /*=================
-    Paket harga
-    ===================*/
-    document.querySelectorAll('.price-list li').forEach(item => {
-    item.addEventListener('click', () => {
-        item
-          .closest('.price-list')
-          .querySelectorAll('li')
-          .forEach(li => li.classList.remove('active'));
-
-        item.classList.add('active');
+    backToLogin?.addEventListener("click", () => {
+        registerModal?.classList.remove("active");
+        loginModal?.classList.add("active");
     });
+
+    closeRegister?.addEventListener("click", () => {
+        registerModal?.classList.remove("active");
+    });
+
+    registerModal?.addEventListener("click", e => {
+        if (e.target === registerModal) registerModal.classList.remove("active");
+    });
+
+    /* =====================================================
+       TOGGLE PASSWORD
+    ===================================================== */
+    const togglePass = document.getElementById("togglePassword");
+    const passInput  = document.getElementById("password");
+
+    togglePass?.addEventListener("click", () => {
+        passInput.type = passInput.type === "password" ? "text" : "password";
+    });
+
+    /* =====================================================
+       NAVBAR HAMBURGER
+    ===================================================== */
+    const navToggle = document.getElementById("navToggle");
+    const navMenu   = document.getElementById("navMenu");
+
+    navToggle?.addEventListener("click", () => {
+        navMenu?.classList.toggle("active");
+    });
+
+    /* =====================================================
+       BOOKING / PILIH PAKET (FIXED & SINGLE SOURCE)
+    ===================================================== */
+    document.querySelectorAll(".price-option").forEach(button => {
+        button.addEventListener("click", () => {
+
+            const card = button.closest(".pricing-card");
+            if (!card) return;
+
+            const paket = card.dataset.paket;
+            const sesi  = button.dataset.sesi;
+            const harga = button.dataset.harga;
+
+            // simpan intent booking (untuk setelah login / register)
+            sessionStorage.setItem("booking_intent", JSON.stringify({
+                paket,
+                sesi,
+                harga
+            }));
+
+      
+
+            // ✅ sudah login → ke form booking
+            const classSlug = encodeURIComponent(paket);
+            window.location.href =
+                `/booking/${classSlug}?sesi=${sesi}&harga=${harga}`;
+        });
+    });
+
+    /* =====================================================
+       FAQ ACCORDION
+    ===================================================== */
+    document.querySelectorAll(".faq-item").forEach(item => {
+        const question = item.querySelector(".faq-question");
+        if (!question) return;
+
+        question.addEventListener("click", () => {
+            document.querySelectorAll(".faq-item").forEach(other => {
+                if (other !== item) other.classList.remove("active");
+            });
+            item.classList.toggle("active");
+        });
+    });
+
+    /* =====================================================
+       FILTER NOTIFIKASI
+    ===================================================== */
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const notifications = document.querySelectorAll(".notification-item");
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            filterButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filter = btn.dataset.filter;
+            notifications.forEach(item => {
+                if (filter === "all") item.style.display = "flex";
+                if (filter === "unread") {
+                    item.style.display = item.classList.contains("unread")
+                        ? "flex"
+                        : "none";
+                }
+            });
+        });
+    });
+
 });
-document.querySelectorAll('.price-option').forEach(button => {
-    button.addEventListener('click', () => {
 
-        // reset active di card ini saja
-        const list = button.closest('.price-list');
-        list.querySelectorAll('.price-option')
-            .forEach(btn => btn.classList.remove('active'));
+/*  ===================
+KALENDER HARI
+=======================*/
 
-        button.classList.add('active');
+document.querySelectorAll('.date-item').forEach(btn => {
 
-        // ambil data untuk modal (nanti)
-        const sesi  = button.dataset.sesi;
-        const harga = button.dataset.harga;
+    btn.addEventListener('click', function() {
 
-        console.log('Pilih paket:', sesi, harga);
+        document
+            .querySelectorAll('.date-item')
+            .forEach(el => {
+                el.classList.remove('active');
+            });
 
-        // TODO:
-        // openPaymentModal(sesi, harga);
+        document
+            .querySelectorAll('.date-content')
+            .forEach(el => {
+                el.style.display = 'none';
+            });
+
+        this.classList.add('active');
+
+        document.getElementById(
+            'date-' + this.dataset.date
+        ).style.display = 'block';
+
     });
+
 });
 
+window.openPopup = function() {
+    const popup = document.getElementById('classPopup');
+    if (popup) {
+        popup.classList.add('active');
+    }
+};
+
+window.closePopup = function() {
+    const popup = document.getElementById('classPopup');
+    if (popup) {
+        popup.classList.remove('active');
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dayButtons = document.querySelectorAll(".day-btn");
+    const dayContainers = document.querySelectorAll(".day-classes");
+
+    const dayTitle = document.querySelector(".calendar-date h3");
+    const dayFullDate = document.querySelector(".calendar-date p");
+
+    dayButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const selectedDate = this.dataset.date;
+            const selectedFullDate = this.dataset.fullDate;
+
+            // 1️⃣ Active tab
+            dayButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            // 2️⃣ Update header
+            dayTitle.textContent = this.textContent.trim();
+            dayFullDate.textContent = selectedFullDate;
+
+            // 3️⃣ Tampilkan kelas berdasarkan TANGGAL
+            dayContainers.forEach(container => {
+                container.style.display =
+                    container.dataset.date === selectedDate
+                        ? "block"
+                        : "none";
+            });
+
+        });
+
+    });
+
+});

@@ -10,6 +10,7 @@ class About extends Model
         'title',
         'subtitle',
         'description',
+        'image'
       
     ];
 }

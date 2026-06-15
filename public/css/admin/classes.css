@@ -1,0 +1,92 @@
+/* CARD */
+.classes-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+/* HEADER */
+.classes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* BUTTON ADD */
+.btn-add {
+    background: #444;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-add:hover {
+    background: #333;
+}
+
+/* TABLE */
+.classes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* HEADER */
+.classes-table thead {
+    background: #e5e7eb;
+}
+
+.classes-table th {
+    padding: 12px;
+    text-align: left;
+    color: #333;
+    font-weight: 600;
+}
+
+/* BODY */
+.classes-table td {
+    padding: 12px;
+    border-top: 1px solid #eee;
+    color: #444;
+}
+
+/* BADGE */
+.badge-soft {
+    background: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* BUTTON EDIT */
+.btn-edit {
+    background: #555;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.btn-edit:hover {
+    background: #444;
+}
+
+/* BUTTON DELETE */
+.btn-delete {
+    background: #777;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background: #666;
+}

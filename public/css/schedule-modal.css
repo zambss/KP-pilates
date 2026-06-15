@@ -1,0 +1,174 @@
+/* =========================
+   CLASS SCHEDULE MODAL
+========================= */
+
+.class-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.class-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   OVERLAY (SOFT + BLUR)
+========================= */
+.class-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(60, 45, 30, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* =========================
+   MODAL BOX
+========================= */
+.class-modal-box {
+    position: relative;
+    width: 92%;
+    max-width: 560px;
+    background: linear-gradient(180deg, #fffaf4 0%, #ffffff 100%);
+    border-radius: 32px;
+    padding: 26px;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.18);
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+.class-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.class-modal-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    color: #4e3b2c;
+}
+
+.class-modal-header p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #8c7a66;
+}
+
+.modal-close {
+    background: #efe3d3;
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #6a5846;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.class-modal-content {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* =========================
+   CLASS ITEM
+========================= */
+.class-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #fff1df, #ffffff);
+    box-shadow: inset 0 0 0 1px #f0dcc4;
+}
+
+.class-info h4 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #5a3f28;
+}
+
+.class-meta {
+    display: flex;
+    gap: 22px;
+    font-size: 13px;
+    color: #8b7259;
+}
+
+/* =========================
+   AVAILABLE
+========================= */
+.class-item.available {
+    background: linear-gradient(180deg, #fff0dc, #ffffff);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-register {
+    padding: 12px 22px;
+    background: linear-gradient(180deg, #f4b15c, #e4942a);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(228,148,42,.35);
+}
+
+/* =========================
+   FULL
+========================= */
+.class-item.full {
+    background: linear-gradient(180deg, #f7efe6, #ffffff);
+}
+
+.class-full-label {
+    padding: 10px 14px;
+    background: #fff6ea;
+    color: #9b6a1f;
+    border-radius: 16px;
+    font-size: 13px;
+    display: flex;
+    gap: 6px;
+    box-shadow: inset 0 0 0 1px #f1dab6;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+    .class-modal-box {
+        padding: 22px 18px;
+        border-radius: 26px;
+    }
+
+    .class-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .btn-register {
+        width: 100%;
+    }
+}

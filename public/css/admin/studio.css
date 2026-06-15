@@ -1,0 +1,739 @@
+/* =========================
+   STUDIO PAGE HEADER
+========================= */
+
+.studio-page-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+
+}
+
+.studio-page-header h2 {
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #222;
+
+    margin-bottom: 6px;
+
+}
+
+.studio-page-header p {
+
+    font-size: 14px;
+
+    color: #777;
+
+    margin: 0;
+
+}
+
+
+
+/* =========================
+   STUDIO CARD
+========================= */
+
+.studio-card {
+
+    padding: 24px;
+
+    border-radius: 24px;
+
+    background: #fff;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+
+    border: 1px solid #f1f1f1;
+
+}
+
+
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.studio-card-header {
+
+    margin-bottom: 22px;
+
+}
+
+.studio-card-header h3 {
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #222;
+
+    margin: 0;
+
+}
+
+
+
+/* =========================
+   FORM GRID
+========================= */
+
+.studio-form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.studio-form-group {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.studio-form-group label {
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #444;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+/* =========================
+   INPUT & SELECT
+========================= */
+
+.studio-input,
+.studio-select {
+
+    width: 100%;
+
+    height: 48px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 14px;
+
+    padding: 0 16px;
+
+    font-size: 14px;
+
+    background: #fafafa;
+
+    transition: all .2s ease;
+
+}
+
+.studio-input:focus,
+.studio-select:focus {
+
+    outline: none;
+
+    border-color: #b79b6c;
+
+    background: #fff;
+
+    box-shadow: 0 0 0 4px rgba(183,155,108,0.08);
+
+}
+
+
+
+/* =========================
+   FORM ACTION
+========================= */
+
+.studio-form-action {
+
+    margin-top: 24px;
+
+}
+
+.studio-submit-btn {
+
+    min-width: 180px;
+
+}
+
+
+
+/* =========================
+   TABLE WRAPPER
+========================= */
+
+.studio-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+
+/* =========================
+   TABLE
+========================= */
+
+.studio-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+.studio-table thead tr {
+
+    border-bottom: 1px solid #ececec;
+
+}
+
+.studio-table th {
+
+    padding: 16px 14px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #777;
+
+}
+
+.studio-table td {
+
+    padding: 18px 14px;
+
+    font-size: 14px;
+
+    color: #222;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid #f3f3f3;
+
+}
+
+
+
+/* =========================
+   STUDIO NAME
+========================= */
+
+.studio-name {
+
+    font-weight: 600;
+
+}
+
+
+
+/* =========================
+   BADGE
+========================= */
+
+.studio-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 90px;
+
+    height: 34px;
+
+    padding: 0 14px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+}
+
+.studio-badge.active {
+
+    background: rgba(35, 181, 103, 0.12);
+
+    color: #1d8f53;
+
+}
+
+.studio-badge.inactive {
+
+    background: rgba(239, 68, 68, 0.12);
+
+    color: #d13d3d;
+
+}
+
+
+
+/* =========================
+   ACTION GROUP
+========================= */
+
+.studio-action-group {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.studio-empty {
+
+    text-align: center;
+
+    padding: 28px 16px !important;
+
+    color: #888;
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+    .studio-form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .studio-card {
+
+        padding: 18px;
+
+    }
+
+    .studio-page-header h2 {
+
+        font-size: 24px;
+
+    }
+
+    .studio-table th,
+    .studio-table td {
+
+        padding: 14px 10px;
+
+    }
+
+}
+
+/* =========================
+   CREATE ROOM PAGE
+========================= */
+
+.room-create-page {
+
+    max-width: 700px;
+
+}
+
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.room-create-title {
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #222;
+
+    margin-bottom: 24px;
+
+}
+
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.room-create-card {
+
+    background: #fff;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    border: 1px solid #f1f1f1;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+
+}
+
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.room-form-group {
+
+    margin-bottom: 22px;
+
+}
+
+.room-form-group label {
+
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #444;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* =========================
+   INPUT
+========================= */
+
+.room-input {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 14px;
+
+    padding: 0 16px;
+
+    font-size: 14px;
+
+    background: #fafafa;
+
+    transition: all .2s ease;
+
+}
+
+.room-input:focus {
+
+    outline: none;
+
+    border-color: #b79b6c;
+
+    background: #fff;
+
+    box-shadow: 0 0 0 4px rgba(183,155,108,0.08);
+
+}
+
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.room-checkbox-group {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+}
+
+.room-checkbox-group input[type="checkbox"] {
+
+    width: 18px;
+    height: 18px;
+
+    accent-color: #b79b6c;
+
+    cursor: pointer;
+
+}
+
+.room-checkbox-group label {
+
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #444;
+
+    cursor: pointer;
+
+}
+
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.room-submit-btn {
+
+    min-width: 180px;
+
+    margin-top: 10px;
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .room-create-card {
+
+        padding: 20px;
+
+    }
+
+    .room-create-title {
+
+        font-size: 24px;
+
+    }
+
+}
+
+/* =========================
+   EDIT ROOM PAGE
+========================= */
+
+.room-edit-page {
+
+    max-width: 700px;
+
+}
+
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.room-edit-title {
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #222;
+
+    margin-bottom: 24px;
+
+}
+
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.room-edit-card {
+
+    background: #fff;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    border: 1px solid #f1f1f1;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+
+}
+
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.room-edit-group {
+
+    margin-bottom: 22px;
+
+}
+
+.room-edit-group label {
+
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #444;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* =========================
+   INPUT
+========================= */
+
+.room-edit-input {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 14px;
+
+    padding: 0 16px;
+
+    font-size: 14px;
+
+    background: #fafafa;
+
+    transition: all .2s ease;
+
+}
+
+.room-edit-input:focus {
+
+    outline: none;
+
+    border-color: #b79b6c;
+
+    background: #fff;
+
+    box-shadow: 0 0 0 4px rgba(183,155,108,0.08);
+
+}
+
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.room-edit-checkbox {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+}
+
+.room-edit-checkbox input[type="checkbox"] {
+
+    width: 18px;
+    height: 18px;
+
+    accent-color: #b79b6c;
+
+    cursor: pointer;
+
+}
+
+.room-edit-checkbox label {
+
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #444;
+
+    cursor: pointer;
+
+}
+
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.room-edit-btn {
+
+    min-width: 180px;
+
+    margin-top: 10px;
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .room-edit-card {
+
+        padding: 20px;
+
+    }
+
+    .room-edit-title {
+
+        font-size: 24px;
+
+    }
+
+}

@@ -1,0 +1,144 @@
+/* WRAPPER */
+.orders-wrapper {
+    padding: 10px;
+}
+
+/* HEADER */
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.orders-header h4 {
+    color: #333;
+}
+
+/* SUMMARY */
+.orders-summary {
+    margin-bottom: 20px;
+}
+.btn-approve {
+    background: #22c55e;
+    color: white;
+}
+
+.btn-reject {
+    background: #ef4444;
+    color: white;
+}
+.summary-card {
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    width: 200px;
+}
+
+.summary-card small {
+    color: #777;
+}
+
+.summary-card h5 {
+    margin: 0;
+    color: #333;
+}
+
+/* CARD */
+.orders-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+/* TABLE */
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table thead {
+    background: #f0f0f0;
+}
+
+.orders-table th {
+    padding: 12px;
+    text-align: left;
+    color: #333;
+    font-weight: 600;
+}
+
+.orders-table td {
+    padding: 12px;
+    border-top: 1px solid #eee;
+    color: #444;
+}
+
+/* BADGE */
+.badge-soft {
+    background: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* STATUS */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+.status-badge.paid {
+    background: #e6f4ea;
+    color: #2e7d32;
+}
+
+.status-badge.pending {
+    background: #fff4e5;
+    color: #ef6c00;
+}
+
+.status-badge.failed {
+    background: #fdecea;
+    color: #c62828;
+}
+
+/* ACTION */
+.action-cell {
+    display: flex;
+    gap: 6px;
+}
+
+.action-cell form {
+    margin: 0;
+}
+
+/* BUTTON */
+.btn-edit {
+    background: #555;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.btn-edit:hover {
+    background: #444;
+}
+
+.btn-delete {
+    background: #777;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background: #666;
+}

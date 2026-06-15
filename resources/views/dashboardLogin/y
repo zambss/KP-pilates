@@ -1,0 +1,51 @@
+@extends('layouts.dashboard')
+
+@section('content')
+<section class="dashboard-section">
+
+    <h2>Riwayat Transaksi</h2>
+    <p>Semua pembelian kelas dan promo</p>
+
+    <div class="transaction-table">
+
+        {{-- HEADER --}}
+        <div class="transaction-row head">
+            <span>ID</span>
+            <span>Tipe</span>
+            <span>Nama</span>
+            <span>Sesi</span>
+            <span>Harga</span>
+            <span>Status</span>
+        </div>
+
+        {{-- DATA --}}
+        @forelse($transactions as $trx)
+            <div class="transaction-row">
+                <span>{{ $trx['id'] }}</span>
+                <span>{{ $trx['type'] }}</span>
+                <span>{{ $trx['name'] }}</span>
+
+                <span>
+                    @if($trx['sessions'])
+                        {{ $trx['sessions'] }} sesi
+                    @else
+                        Paket
+                    @endif
+                </span>
+
+                <span>Rp {{ number_format($trx['price'],0,',','.') }}</span>
+
+                <span class="status {{ $trx['status'] }}">
+                    {{ ucfirst($trx['status']) }}
+                </span>
+            </div>
+        @empty
+            <div class="transaction-row">
+                <span colspan="6">Belum ada transaksi</span>
+            </div>
+        @endforelse
+
+    </div>
+
+</section>
+@endsection

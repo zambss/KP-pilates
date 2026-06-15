@@ -8,9 +8,10 @@
         <p class="subtitle">Login to your account</p>
 
         <!-- GOOGLE -->
-        <button class="btn-google">
-            Sign in with Google
-        </button>
+       <a href="{{ url('/auth/google') }}" class="btn-google">
+    Sign in with Google
+</a>
+
 
         <div class="divider">or</div>
 

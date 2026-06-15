@@ -1,0 +1,148 @@
+/* WRAPPER */
+.bookings-wrapper {
+    padding: 10px;
+}
+
+/* HEADER */
+.bookings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bookings-header h4 {
+    color: #333;
+}
+
+/* FILTER */
+.filter-card {
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* GRID FILTER */
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.filter-item label {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.filter-item input,
+.filter-item select {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* ACTION FILTER */
+.filter-action {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+/* TABLE CARD */
+.bookings-card {
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* TABLE */
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bookings-table thead {
+    background: #f0f0f0;
+}
+
+.bookings-table th {
+    padding: 12px;
+    text-align: left;
+    color: #333;
+}
+
+.bookings-table td {
+    padding: 12px;
+    border-top: 1px solid #eee;
+    color: #444;
+}
+
+/* BADGE */
+.badge-soft {
+    background: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* STATUS */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+.status-badge.booked {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.status-badge.attended {
+    background: #e6f4ea;
+    color: #2e7d32;
+}
+
+.status-badge.cancel {
+    background: #fdecea;
+    color: #c62828;
+}
+
+/* ACTION */
+.action-cell {
+    display: flex;
+    gap: 6px;
+}
+
+/* BUTTON */
+.btn-edit {
+    background: #555;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.btn-delete {
+    background: #777;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 12px;
+}
+
+/* BTN ADD reuse */
+.btn-add {
+    background: #444;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+}

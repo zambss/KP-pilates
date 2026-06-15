@@ -1,0 +1,113 @@
+/* WRAPPER */
+.packages-wrapper {
+    padding: 10px;
+}
+
+/* HEADER */
+.packages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.packages-header h4 {
+    color: #333;
+}
+
+/* GRID */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.package-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #eee;
+    transition: 0.2s;
+}
+
+.package-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* TITLE */
+.package-title {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* PRICE */
+.package-price {
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* STATUS */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+.status-badge.active {
+    background: #e6f4ea;
+    color: #2e7d32;
+}
+
+.status-badge.inactive {
+    background: #eee;
+    color: #777;
+}
+
+/* ACTION */
+.package-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.package-actions form {
+    flex: 1;
+}
+
+.package-actions .btn-edit,
+.package-actions .btn-delete {
+    flex: 1;
+    text-align: center;
+}
+
+/* BUTTON */
+.btn-edit {
+    background: #555;
+    color: white;
+    padding: 6px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.btn-edit:hover {
+    background: #444;
+}
+
+.btn-delete {
+    background: #777;
+    color: white;
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background: #666;
+}

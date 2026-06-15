@@ -1,0 +1,94 @@
+/* WRAPPER */
+.package-items-wrapper {
+    padding: 10px;
+}
+
+/* HEADER */
+.package-items-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.package-items-header h4 {
+    color: #333;
+}
+
+/* CARD */
+.package-items-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+/* TABLE */
+.package-items-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* HEADER */
+.package-items-table thead {
+    background: #f0f0f0;
+}
+
+.package-items-table th {
+    padding: 12px;
+    text-align: left;
+    color: #333;
+    font-weight: 600;
+}
+
+/* BODY */
+.package-items-table td {
+    padding: 12px;
+    border-top: 1px solid #eee;
+    color: #444;
+}
+
+/* BADGE */
+.badge-soft {
+    background: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* ACTION */
+.action-cell {
+    display: flex;
+    gap: 6px;
+}
+
+.action-cell form {
+    margin: 0;
+}
+
+/* BUTTON */
+.btn-edit {
+    background: #555;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.btn-edit:hover {
+    background: #444;
+}
+
+.btn-delete {
+    background: #777;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background: #666;
+} 

@@ -1,0 +1,202 @@
+/* =========================
+   REGISTER MODAL
+========================= */
+
+.register-box {
+    width: 360px;
+    background: rgba(255, 245, 218, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 16px 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.15);
+    position: relative;
+    animation: scaleIn .25s ease;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+
+@keyframes scaleIn {
+    from {
+        transform: scale(.96);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* CLOSE */
+.modal-close {
+    position: absolute;
+    top: 1px;
+    right: 18px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* LOGO */
+.modal-logo {
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.logo-icon {
+    display: inline-block;
+    background: #8FAE8B;
+    color: #333;
+    padding: 8px 10px;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
+.logo-icon h4{
+    color: #333;
+}
+
+.modal-logo h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+
+/* TITLE */
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.modal-subtitle {
+    font-size: 12px;
+    text-align: center;
+    color: #7b725f;
+    margin-bottom: -2px;
+}
+
+/* INPUT */
+.register-box input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #d2c5a3;
+    background: #f8f1df;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* PHONE */
+.phone-group {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.phone-group span {
+    padding: 10px 12px;
+    background: #f1e8cf;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+/* BUTTON */
+.btn-primary {
+    width: 100%;
+    background: #9a8f62;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.modal-footer {
+    margin-top: 1px;
+    font-size: 12px;
+    text-align: center;
+    color: #6f6552;
+}
+
+.link-action {
+    color: #8FAE8B;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+
+/* =========================
+   AGREEMENT SECTION
+========================= */
+
+.agreement-section {
+
+    margin-top: 20px;
+
+}
+
+.agreement-box {
+
+    background: #f8f8f8;
+    border-radius: 14px;
+    padding: 18px 20px;
+    border: 1px solid #ececec;
+
+}
+
+.agreement-box p {
+
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+
+}
+
+
+/* =========================
+   CUSTOM CHECKBOX
+========================= */
+
+.form-check-custom {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 18px;
+
+}
+
+.form-check-custom input[type="checkbox"] {
+
+    width: 18px;
+    height: 18px;
+
+    accent-color: #c8a96b;
+
+    cursor: pointer;
+
+}
+
+.form-check-custom label {
+
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #222;
+
+    cursor: pointer;
+
+}

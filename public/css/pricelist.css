@@ -1,0 +1,239 @@
+/* WRAPPER */
+
+.pl-wrapper{
+    padding:50px 40px;
+    background:linear-gradient(180deg,#f6ead4,#e6d3a9);
+    font-family:'Poppins',sans-serif;
+}
+
+/* HEADER */
+
+.pl-header{
+    margin-bottom:45px;
+}
+
+.pl-header h1{
+    font-size:32px;
+    font-weight:700;
+    color:#3e2f1c;
+}
+
+.pl-header p{
+    color:#7a6650;
+    margin-top:6px;
+}
+
+/* ALERT */
+
+.pl-alert{
+    background:#d4edda;
+    padding:12px 16px;
+    border-radius:8px;
+    margin-bottom:25px;
+}
+
+/* SECTION */
+
+.pl-section{
+    margin-bottom:60px;
+}
+
+.pl-section-title{
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:28px;
+    color:#3e2f1c;
+}
+
+/* MEMBERSHIP GRID */
+
+.pl-membership-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+/* MEMBER CARD */
+
+.pl-member-card{
+    position:relative;
+    background:#fff;
+    border-radius:20px;
+    padding:30px;
+
+    border:1px solid #ecdcc3;
+
+    transition:.25s;
+}
+
+.pl-member-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 32px rgba(0,0,0,.12);
+}
+
+/* HIGHLIGHT */
+
+.pl-member-card.highlight{
+    border:2px solid #e0a54b;
+    background:linear-gradient(180deg,#f8e7c9,#fff);
+}
+
+/* BADGE */
+
+.pl-badge{
+    position:absolute;
+    top:-12px;
+    right:20px;
+
+    background:#e0a54b;
+    color:white;
+
+    font-size:11px;
+    padding:5px 12px;
+
+    border-radius:20px;
+}
+
+/* PRICE */
+
+.pl-price{
+    font-size:30px;
+    font-weight:700;
+    margin:18px 0;
+}
+
+/* FEATURES */
+
+.pl-feature{
+    list-style:none;
+    padding:0;
+    margin-bottom:25px;
+}
+
+.pl-feature li{
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+/* BUTTON */
+
+.pl-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+
+    padding:13px;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#e0a54b,#c8872c);
+    color:white;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.2s;
+}
+
+.pl-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(0,0,0,.15);
+}
+
+/* CLASS GRID */
+
+.pl-class-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+/* CLASS CARD */
+
+.pl-class-card{
+    background:white;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    border:1px solid #ecdcc3;
+
+    transition:.25s;
+}
+
+.pl-class-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 26px rgba(0,0,0,.1);
+}
+
+/* CLASS HEADER */
+
+.pl-class-header{
+    margin-bottom:18px;
+}
+
+.pl-class-header h4{
+    font-size:17px;
+    margin-bottom:4px;
+}
+
+.pl-category{
+    font-size:12px;
+    color:#8c755e;
+}
+
+/* SESSION */
+
+.pl-session{
+    display:flex;
+    justify-content:space-between;
+
+    padding:12px 14px;
+
+    border-radius:12px;
+
+    border:1px solid #e6d4b8;
+
+    margin-bottom:10px;
+
+    text-decoration:none;
+    color:#3e2f1c;
+
+    background:#fffaf4;
+
+    transition:.2s;
+}
+
+.pl-session:hover{
+    background:#f6ead7;
+    transform:translateX(4px);
+}
+
+/* EMPTY */
+
+.pl-empty{
+    color:#7a6650;
+    font-size:13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:1000px){
+
+    .pl-membership-grid,
+    .pl-class-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:600px){
+
+    .pl-membership-grid,
+    .pl-class-grid{
+        grid-template-columns:1fr;
+    }
+
+}

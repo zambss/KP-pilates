@@ -1,0 +1,96 @@
+/* SIDEBAR */
+.sidebar {
+    width: 210px;
+    height: 100vh;
+    background: linear-gradient(180deg, #2c2c2c, #1f1f1f);
+    color: #ddd;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding: 20px 15px;
+
+    border-radius: 0 20px 20px 0;
+
+    overflow-y: auto; /* 🔥 INI KUNCI */
+}
+
+/* biar scroll nya smooth & gak ganggu */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* TITLE */
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+/* SECTION TITLE */
+.sidebar-section {
+    font-size: 11px;
+    color: #888;
+    margin: 15px 0 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+/* MENU */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 6px;
+}
+
+/* LINK */
+.sidebar-menu a {
+    display: block;
+    padding: 10px 12px;
+    color: #bbb;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+/* HOVER */
+.sidebar-menu a:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    transform: translateX(4px);
+}
+
+/* ACTIVE */
+.sidebar-menu a.active {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+}
+
+/* LOGOUT */
+.sidebar-logout {
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.sidebar-logout:hover {
+    background: rgba(255,255,255,0.2);
+}

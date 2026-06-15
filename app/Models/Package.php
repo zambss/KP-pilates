@@ -11,6 +11,7 @@ class Package extends Model
         'name',
         'description',
         'highlight',
+        'allowed_types',
     ];
 
     public function prices()
@@ -22,4 +23,18 @@ class Package extends Model
     {
         return $this->hasMany(PackageBenefit::class);
     }
+
+      public function getAllowedTypesArrayAttribute(): array
+    {
+        return explode(',', $this->allowed_types);
+    }
+
+    /**
+     * Check apakah package boleh untuk tipe kelas tertentu
+     */
+    public function allows(string $type): bool
+    {
+        return in_array($type, $this->allowed_types_array);
+    }
+
 }

@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class CustomerAuth
 {
-    public function handle(Request $request, Closure $next)
+      protected function redirectTo($request): ?string
     {
-        if (!session()->has('user_name')) {
-            return redirect()->route('home');
+        if (! $request->expectsJson()) {
+            return route('home', ['login' => 1]);
         }
 
-        return $next($request);
+        return null;
     }
 }

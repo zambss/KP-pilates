@@ -1,0 +1,300 @@
+@extends('layouts.main')
+
+@section('content')
+
+@include('components.login-modal')
+
+<link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+<script src="{{ asset('js/modal.js') }}"></script>
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+@endpush
+
+{{-- ================= HERO ================= --}}
+<section class="hero">
+    <div class="hero-glass">
+        <div class="hero-left">
+
+            <span class="hero-subtitle">
+                {{ $hero->subtitle ?? 'Premium Pilates Studio' }}
+            </span>
+
+            <h1>
+                {!! nl2br(e($hero->title ?? 'Transform Your Body & Mind')) !!}
+            </h1>
+
+            <p>
+                {{ $hero->description ?? '-' }}
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn-primary" id="openLogin">
+                    {{ $hero->button_text ?? 'Join Class Now' }}
+                </button>
+            </div>
+
+            <div class="hero-divider"></div>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <strong>{{ $hero->members ?? 500 }}+</strong>
+                    <span>Active Members</span>
+                </div>
+                <div class="stat-box">
+                    <strong>{{ $hero->weekly_classes ?? 50 }}+</strong>
+                    <span>Weekly Classes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="class-card">
+                <img src="{{ asset('storage/' . ($hero->image ?? 'default.png')) }}"
+                     class="card-img">
+
+                <a href="{{ route('dashboardLogin.calendar') }}"
+                   class="card-glass-action">
+                    <div class="info-text">
+                        <span class="category">Weekly Classes</span>
+                        <h4>{{ $hero->card_title ?? 'Reformer Pilates' }}</h4>
+                        <p>{{ $hero->card_time ?? 'Today' }}</p>
+                    </div>
+
+                    <div class="arrow-circle">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
+
+{{-- ================= PROMO ================= --}}
+<section id="promo" class="pricing-section">
+
+    <div class="pricing-header">
+        <span class="pricing-subtitle">Special Promo</span>
+        <h2>Promo Membership Terbaik</h2>
+        <p>Nikmati paket promo eksklusif dengan harga lebih hemat.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+        @forelse ($packages as $package)
+        <div class="pricing-card {{ $loop->first ? 'highlight' : '' }}">
+
+            @if($loop->first)
+                <span class="price-list">Best Deal</span>
+            @endif
+
+            <h3 class="promo-title">{{ $package->name }}</h3>
+
+            <div class="promo-price">
+                @if(isset($package->old_price))
+                    <span class="old-price">
+                        Rp {{ number_format($package->old_price,0,',','.') }}
+                    </span>
+                @endif
+
+                <span class="price-list">
+                    Rp {{ number_format($package->price,0,',','.') }}
+                </span>
+            </div>
+
+            <ul class="price-list">
+                @foreach ($package->items as $item)
+                <li class="promo-item">
+                    ✔ {{ $item->session_count }}
+                    Session {{ $item->class->title ?? '-' }}
+                </li>
+                @endforeach
+            </ul>
+
+            <a href="{{ route('pricelist.package.checkout',$package->id) }}"
+               class="price-option">
+                Ambil Promo
+            </a>
+
+        </div>
+        @empty
+            <p class="pl-empty">Promo belum tersedia</p>
+        @endforelse
+
+    </div>
+</section>
+
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
+
+{{-- ================= KELAS ================= --}}
+<section id="paket&harga" class="pricing-section">
+    <div class="pricing-header">
+        <span class="pricing-subtitle">Kelas & Harga</span>
+        <h2>Pilih Kelas yang Sesuai untuk Anda</h2>
+        <p>Pilih kelas dan jumlah sesi sesuai kebutuhan Anda.</p>
+    </div>
+
+    <div class="pricing-grid">
+        @foreach ($classes as $class)
+        <div class="pricing-card {{ $class->highlight ? 'highlight' : '' }}">
+
+            <h4>{{ ucfirst($class->category) }}</h4>
+            <h3>{{ $class->title }}</h3>
+            <p class="desc">{{ $class->description }}</p>
+
+            <ul class="price-list">
+                @foreach ($class->prices as $price)
+                <li>
+                    <form method="GET"
+                          action="{{ route('classes.checkout', $class->id) }}">
+                        <input type="hidden"
+                               name="price_id"
+                               value="{{ $price->id }}">
+
+                        <button type="submit"
+                                class="price-option">
+                            <span>{{ $price->session_count }} sesi</span>
+                            <strong>
+                                Rp{{ number_format($price->price,0,',','.') }}
+                            </strong>
+                        </button>
+                    </form>
+                </li>
+                @endforeach
+            </ul>
+
+        </div>
+        @endforeach
+    </div>
+</section>
+
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
+
+{{-- ================= ABOUT ================= --}}
+<section id="about" class="about-preview">
+    <div class="container about-layout">
+
+        <div class="about-content">
+            <h2 class="about-label">
+                {{ $about->title ?? 'About Rens Pilates' }}
+            </h2>
+
+            <p class="about-subtitle">
+                {{ $about->subtitle ?? 'Women only Pilates studio' }}
+            </p>
+
+            <h2 class="about-title">
+                Transform your <br> Body & Mind
+            </h2>
+
+            <p class="about-desc">
+                {{ $about->description ?? '-' }}
+            </p>
+
+            {{-- stats tetap biar desain sama --}}
+            <div class="hero-stats">
+                <div>
+                    <strong>500+</strong>
+                    <span>Active Members</span>
+                </div>
+                <div>
+                    <strong>50+</strong>
+                    <span>Weekly Classes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-card">
+            <img src="{{ asset('storage/' . ($about->image ?? 'default.png')) }}"
+                 alt="About Image">
+        </div>
+
+    </div>
+</section>
+
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
+
+{{-- ================= FASILITAS ================= --}}
+<section id="fasilitas" class="fasilitas-preview">
+    <div class="container">
+        <span class="section-label">Fasilitas</span>
+        <h2>Fasilitas Premium untuk Pengalaman Terbaik</h2>
+
+        <div class="fasilitas-grid">
+            @foreach($facilities as $item)
+            <div class="fasilitas-card">
+                <img src="{{ asset('storage/' . $item->image) }}">
+                <div class="fasilitas-text">
+                    <h3>{{ $item->name }}</h3>
+                    <p>Fasilitas premium untuk kenyamanan Anda</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<div class="section-divider-wrapper">
+    <div class="section-divider"></div>
+</div>
+
+{{-- ================= COACH ================= --}}
+<section id="coach" class="coach-preview">
+    <div class="container">
+
+        <h2>Coach</h2>
+        <p>Meet Our Professional Instructors</p>
+
+        <div class="fasilitas-grid">
+            @foreach ($coaches as $coach)
+            <div class="fasilitas-card">
+                <img src="{{ asset('storage/' . $coach->photo) }}"
+                     alt="{{ $coach->name }}">
+                <div class="fasilitas-text">
+                    <h3>{{ $coach->name }}</h3>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+    </div>
+</section>
+
+{{-- ================= CTA ================= --}}
+<section class="cta">
+    <div class="container">
+        <h2>{{ $hero->cta_title ?? 'Siap Memulai Transformasi Anda?' }}</h2>
+        <p>{{ $hero->cta_desc ?? 'Gabung sekarang!' }}</p>
+
+        <div class="cta-actions">
+            <a href="#" class="btn-primary">
+                {{ $hero->cta_button ?? 'Join Now' }}
+            </a>
+            <a href="#paket&harga" class="btn-outline">Lihat Kelas</a>
+        </div>
+    </div>
+</section>
+
+<div class="section-bawah"></div>
+
+@endsection
+
+{{-- AUTO OPEN LOGIN --}}
+@if (request()->has('login'))
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("loginModal")?.classList.add("active");
+});
+</script>
+@endif

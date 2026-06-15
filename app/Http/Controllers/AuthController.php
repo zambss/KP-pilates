@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    // halaman login
+    
     public function login()
     {
         return view('components.login-modal');
@@ -17,18 +17,21 @@ class AuthController extends Controller
 
     // proses login
     public function loginProcess(Request $request)
-{
-    if (Auth::attempt($request->only('email', 'password'))) {
-        $request->session()->regenerate();
+    {
+        if (Auth::attempt($request->only('email', 'password'))) {
 
-        // ⛔ TETAP DI LANDING PAGE
-        return redirect()->back();
+            $request->session()->regenerate();
+            $user = Auth::user();
+
+            if (in_array($user->role, ['admin', 'super_admin'])) {
+                return redirect()->route('admin.dashboard');
+            }
+
+            return redirect('/dashboard');
+        }
+
+        return back()->withErrors(['email' => 'Login gagal']);
     }
-
-    return back()->withErrors(['email' => 'Login gagal']);
-}
-
-
     // halaman register
     public function register()
     {
@@ -60,6 +63,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/');
     }
 }
